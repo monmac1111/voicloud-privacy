@@ -15,11 +15,7 @@
             --accent: #007AFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -29,11 +25,7 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
+        .container { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
 
         header {
             text-align: center;
@@ -42,162 +34,57 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .app-icon {
-            font-size: 48px;
-            margin-bottom: 12px;
-        }
+        .app-icon { font-size: 48px; margin-bottom: 12px; }
+        h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .subtitle { color: var(--text-secondary); font-size: 15px; }
 
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
-
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-
-        .lang-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 20px;
-        }
-
+        .lang-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
         .lang-nav button {
-            color: var(--accent);
-            background: transparent;
-            font-size: 13px;
-            font-weight: 500;
-            padding: 6px 14px;
-            border: 1px solid var(--accent);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
+            color: var(--accent); background: transparent; font-size: 13px; font-weight: 500;
+            padding: 6px 14px; border: 1px solid var(--accent); border-radius: 20px;
+            cursor: pointer; transition: all 0.2s; font-family: inherit;
         }
+        .lang-nav button:hover { background-color: var(--accent); color: #fff; }
+        .lang-nav button.active { background-color: var(--accent); color: #fff; }
 
-        .lang-nav button:hover {
-            background-color: var(--accent);
-            color: #fff;
-        }
-
-        .lang-nav button.active {
-            background-color: var(--accent);
-            color: #fff;
-        }
-
-        h2 {
-            font-size: 22px;
-            font-weight: 700;
-            margin: 40px 0 16px;
-            letter-spacing: -0.3px;
-        }
-
-        h3 {
-            font-size: 17px;
-            font-weight: 600;
-            margin: 28px 0 10px;
-            color: var(--text);
-        }
-
-        p {
-            margin-bottom: 14px;
-            font-size: 15px;
-            color: var(--text-secondary);
-        }
-
-        ul {
-            margin: 8px 0 16px 20px;
-            font-size: 15px;
-            color: var(--text-secondary);
-        }
-
-        ul li {
-            margin-bottom: 6px;
-        }
+        h2 { font-size: 22px; font-weight: 700; margin: 40px 0 16px; letter-spacing: -0.3px; }
+        h3 { font-size: 17px; font-weight: 600; margin: 28px 0 10px; color: var(--text); }
+        p { margin-bottom: 14px; font-size: 15px; color: var(--text-secondary); }
+        ul { margin: 8px 0 16px 20px; font-size: 15px; color: var(--text-secondary); }
+        ul li { margin-bottom: 6px; }
 
         .section {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 24px 28px;
-            margin-bottom: 20px;
-            border: 1px solid var(--border);
+            background: var(--card); border-radius: 12px; padding: 24px 28px;
+            margin-bottom: 20px; border: 1px solid var(--border);
         }
+        .section h3 { margin-top: 0; color: var(--primary); }
 
-        .section h3 {
-            margin-top: 0;
-            color: var(--primary);
-        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .effective-date {
-            font-size: 13px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-top: 8px;
-        }
+        .effective-date { font-size: 13px; color: var(--text-secondary); text-align: center; margin-top: 8px; }
 
         .contact-info {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 24px 28px;
-            border: 1px solid var(--border);
-            text-align: center;
+            background: var(--card); border-radius: 12px; padding: 24px 28px;
+            border: 1px solid var(--border); text-align: center;
         }
+        .contact-info a { font-weight: 600; }
 
-        .contact-info a {
-            font-weight: 600;
-        }
-
-        .lang-section {
-            display: none;
-        }
-
-        .lang-section.active {
-            display: block;
-        }
+        .lang-section { display: none; }
+        .lang-section.active { display: block; }
 
         footer {
-            text-align: center;
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid var(--border);
-            font-size: 13px;
-            color: var(--text-secondary);
+            text-align: center; margin-top: 48px; padding-top: 24px;
+            border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary);
         }
 
         @media (max-width: 600px) {
-            .container {
-                padding: 24px 16px 60px;
-            }
-            h1 {
-                font-size: 24px;
-            }
-            h2 {
-                font-size: 20px;
-            }
-            .section {
-                padding: 20px;
-            }
-            .lang-nav {
-                gap: 6px;
-            }
-            .lang-nav button {
-                font-size: 12px;
-                padding: 5px 10px;
-            }
+            .container { padding: 24px 16px 60px; }
+            h1 { font-size: 24px; }
+            h2 { font-size: 20px; }
+            .section { padding: 20px; }
+            .lang-nav { gap: 6px; }
+            .lang-nav button { font-size: 12px; padding: 5px 10px; }
         }
     </style>
 </head>
@@ -242,7 +129,7 @@
 
             <div class="section">
                 <h3>3. No Developer Servers</h3>
-                <p>Voicloud does not transmit any of your personal data, recordings, or transcriptions to servers owned or operated by the developer. All processing happens on your device or within cloud services you have explicitly authorized.</p>
+                <p>Voicloud does not transmit any of your personal data, recordings, or transcriptions to servers owned or operated by the developer. All processing happens on your device or within cloud services you have explicitly authorized. Accordingly, the developer does not hold any personal data subject to disclosure, correction, or deletion requests.</p>
             </div>
 
             <div class="section">
@@ -251,8 +138,8 @@
             </div>
 
             <div class="section">
-                <h3>5. Advertising</h3>
-                <p>The App uses Google AdMob to display advertisements. Google AdMob may collect certain device and usage data in accordance with Google's privacy policy. For details on how Google handles your data, please visit: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+                <h3>5. Advertising &amp; Third-Party Data Collection</h3>
+                <p>The App uses Google AdMob to display advertisements. Google AdMob may collect certain device information, advertising identifiers (such as IDFA), and usage data, and transmit this data to Google servers located outside your country of residence (including the United States). This data collection is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>. The developer does not directly access or control the data collected by Google AdMob.</p>
             </div>
 
             <div class="section">
@@ -267,12 +154,18 @@
 
             <div class="section">
                 <h3>8. Changes to This Policy</h3>
-                <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this policy periodically.</p>
+                <p>We may update this Privacy Policy from time to time. Any significant changes will be communicated through an in-app notification or update notes. The updated policy will also be reflected on this page with a revised effective date.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. Governing Law</h3>
+                <p>This Privacy Policy shall be governed by and construed in accordance with the laws of Japan.</p>
             </div>
 
             <div class="contact-info">
                 <h3>Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy, please contact us at:<br>
+                <p>Developer: Mon Software<br>
+                If you have any questions about this Privacy Policy, please contact us at:<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -300,8 +193,8 @@
             </div>
 
             <div class="section">
-                <h3>3. 開発者サーバーへの送信なし</h3>
-                <p>Voicloudは、お客様の個人データ、録音、文字起こしデータを開発者が所有または運営するサーバーに送信することはありません。すべての処理はお客様のデバイス上、またはお客様が明示的に許可したクラウドサービス内で行われます。</p>
+                <h3>3. 開発者サーバーへの送信なし・個人データの不保持</h3>
+                <p>Voicloudは、お客様の個人データ、録音、文字起こしデータを開発者が所有または運営するサーバーに送信することはありません。すべての処理はお客様のデバイス上、またはお客様が明示的に許可したクラウドサービス内で行われます。したがって、開発者は開示・訂正・削除請求の対象となる個人データを保有しておりません。</p>
             </div>
 
             <div class="section">
@@ -310,8 +203,8 @@
             </div>
 
             <div class="section">
-                <h3>5. 広告</h3>
-                <p>本アプリはGoogle AdMobを使用して広告を表示します。Google AdMobは、Googleのプライバシーポリシーに従って、一部のデバイス情報および使用データを収集する場合があります。Googleのデータの取り扱いについて詳しくは、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleプライバシーポリシー</a>をご覧ください。</p>
+                <h3>5. 広告および第三者によるデータ収集</h3>
+                <p>本アプリはGoogle AdMobを使用して広告を表示します。Google AdMobは、デバイス情報、広告識別子（IDFA等）、および使用データを収集し、お客様の居住国外（米国を含む）に所在するGoogleのサーバーに送信する場合があります。このデータ収集は<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>に従って行われます。開発者はGoogle AdMobが収集するデータに直接アクセスまたは管理することはありません。</p>
             </div>
 
             <div class="section">
@@ -326,12 +219,18 @@
 
             <div class="section">
                 <h3>8. ポリシーの変更</h3>
-                <p>本プライバシーポリシーは随時更新されることがあります。変更があった場合は、施行日を更新した上で本ページに反映されます。定期的に本ポリシーをご確認いただくことをお勧めします。</p>
+                <p>本プライバシーポリシーは随時更新されることがあります。重要な変更がある場合は、アプリ内通知またはアップデートノートを通じてお知らせします。更新されたポリシーは、施行日を改定した上で本ページにも反映されます。</p>
+            </div>
+
+            <div class="section">
+                <h3>9. 準拠法</h3>
+                <p>本プライバシーポリシーは日本法に準拠し、日本法に従って解釈されるものとします。</p>
             </div>
 
             <div class="contact-info">
                 <h3>お問い合わせ</h3>
-                <p>本プライバシーポリシーに関するご質問は、以下までご連絡ください。<br>
+                <p>開発者: Mon Software<br>
+                本プライバシーポリシーに関するご質問は、以下までご連絡ください。<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -359,8 +258,8 @@
             </div>
 
             <div class="section">
-                <h3>3. 无开发者服务器</h3>
-                <p>Voicloud不会将您的任何个人数据、录音或转录内容传输到开发者拥有或运营的服务器。所有处理都在您的设备上或您明确授权的云服务中进行。</p>
+                <h3>3. 无开发者服务器与个人数据不保留</h3>
+                <p>Voicloud不会将您的任何个人数据、录音或转录内容传输到开发者拥有或运营的服务器。所有处理都在您的设备上或您明确授权的云服务中进行。因此，开发者不持有任何可供披露、更正或删除请求的个人数据。</p>
             </div>
 
             <div class="section">
@@ -369,8 +268,8 @@
             </div>
 
             <div class="section">
-                <h3>5. 广告</h3>
-                <p>本应用使用Google AdMob展示广告。Google AdMob可能会根据Google的隐私政策收集某些设备和使用数据。有关Google如何处理您的数据的详细信息，请访问：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google隐私政策</a>。</p>
+                <h3>5. 广告与第三方数据收集</h3>
+                <p>本应用使用Google AdMob展示广告。Google AdMob可能会收集设备信息、广告标识符（如IDFA）和使用数据，并将这些数据传输到您居住国以外（包括美国）的Google服务器。此数据收集受<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google隐私政策</a>管辖。开发者不直接访问或控制Google AdMob收集的数据。</p>
             </div>
 
             <div class="section">
@@ -385,12 +284,18 @@
 
             <div class="section">
                 <h3>8. 政策变更</h3>
-                <p>我们可能会不时更新本隐私政策。任何更改都将在此页面上反映，并更新生效日期。我们建议您定期查阅本政策。</p>
+                <p>我们可能会不时更新本隐私政策。重大变更将通过应用内通知或更新说明告知。更新后的政策也将在本页面反映，并修订生效日期。</p>
+            </div>
+
+            <div class="section">
+                <h3>9. 适用法律</h3>
+                <p>本隐私政策受日本法律管辖并依据日本法律解释。</p>
             </div>
 
             <div class="contact-info">
                 <h3>联系我们</h3>
-                <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br>
+                <p>开发者：Mon Software<br>
+                如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -418,8 +323,8 @@
             </div>
 
             <div class="section">
-                <h3>3. 개발자 서버 미사용</h3>
-                <p>Voicloud는 귀하의 개인 데이터, 녹음 또는 텍스트 변환 내용을 개발자가 소유하거나 운영하는 서버로 전송하지 않습니다. 모든 처리는 귀하의 기기 또는 귀하가 명시적으로 승인한 클라우드 서비스 내에서 이루어집니다.</p>
+                <h3>3. 개발자 서버 미사용 및 개인 데이터 미보유</h3>
+                <p>Voicloud는 귀하의 개인 데이터, 녹음 또는 텍스트 변환 내용을 개발자가 소유하거나 운영하는 서버로 전송하지 않습니다. 모든 처리는 귀하의 기기 또는 귀하가 명시적으로 승인한 클라우드 서비스 내에서 이루어집니다. 따라서 개발자는 공개, 정정 또는 삭제 요청의 대상이 되는 개인 데이터를 보유하지 않습니다.</p>
             </div>
 
             <div class="section">
@@ -428,8 +333,8 @@
             </div>
 
             <div class="section">
-                <h3>5. 광고</h3>
-                <p>본 앱은 Google AdMob을 사용하여 광고를 표시합니다. Google AdMob은 Google의 개인정보 처리방침에 따라 특정 기기 및 사용 데이터를 수집할 수 있습니다. Google의 데이터 처리 방식에 대한 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보 처리방침</a>을 참조하세요.</p>
+                <h3>5. 광고 및 제3자 데이터 수집</h3>
+                <p>본 앱은 Google AdMob을 사용하여 광고를 표시합니다. Google AdMob은 기기 정보, 광고 식별자(IDFA 등), 사용 데이터를 수집하여 귀하의 거주 국가 외(미국 포함)에 위치한 Google 서버로 전송할 수 있습니다. 이 데이터 수집은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보 처리방침</a>에 따라 관리됩니다. 개발자는 Google AdMob이 수집하는 데이터에 직접 접근하거나 관리하지 않습니다.</p>
             </div>
 
             <div class="section">
@@ -444,12 +349,18 @@
 
             <div class="section">
                 <h3>8. 정책 변경</h3>
-                <p>당사는 수시로 본 개인정보 처리방침을 업데이트할 수 있습니다. 변경 사항은 시행일을 업데이트하여 이 페이지에 반영됩니다. 본 정책을 주기적으로 확인하시기 바랍니다.</p>
+                <p>당사는 수시로 본 개인정보 처리방침을 업데이트할 수 있습니다. 중요한 변경 사항은 앱 내 알림 또는 업데이트 노트를 통해 안내합니다. 업데이트된 방침은 시행일을 수정하여 이 페이지에도 반영됩니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. 준거법</h3>
+                <p>본 개인정보 처리방침은 일본법에 준거하며 일본법에 따라 해석됩니다.</p>
             </div>
 
             <div class="contact-info">
                 <h3>문의</h3>
-                <p>본 개인정보 처리방침에 관한 질문이 있으시면 아래로 연락해 주세요:<br>
+                <p>개발자: Mon Software<br>
+                본 개인정보 처리방침에 관한 질문이 있으시면 아래로 연락해 주세요:<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -465,50 +376,56 @@
                 <h3>1. Datos que recopilamos</h3>
                 <p>La Aplicaci&oacute;n puede acceder a los siguientes datos, todos los cuales permanecen en su dispositivo a menos que usted elija expl&iacute;citamente subirlos:</p>
                 <ul>
-                    <li><strong>Grabaciones de audio</strong> &mdash; Las grabaciones de voz que usted crea se almacenan localmente en su dispositivo.</li>
+                    <li><strong>Grabaciones de audio</strong> &mdash; Las grabaciones de voz se almacenan localmente en su dispositivo.</li>
                     <li><strong>Datos de ubicaci&oacute;n (opcional)</strong> &mdash; Si otorga permiso, la Aplicaci&oacute;n puede etiquetar las grabaciones con su ubicaci&oacute;n. Estos datos se almacenan localmente y nunca se env&iacute;an a nuestros servidores.</li>
-                    <li><strong>Datos del calendario (solo lectura)</strong> &mdash; Si otorga permiso, la Aplicaci&oacute;n lee sus eventos del calendario para sugerir nombres de archivo para las grabaciones. La Aplicaci&oacute;n no modifica ni almacena sus datos del calendario.</li>
+                    <li><strong>Datos del calendario (solo lectura)</strong> &mdash; Si otorga permiso, la Aplicaci&oacute;n lee sus eventos del calendario para sugerir nombres de archivo. La Aplicaci&oacute;n no modifica ni almacena sus datos del calendario.</li>
                 </ul>
             </div>
 
             <div class="section">
                 <h3>2. Subidas a la nube</h3>
-                <p>Puede optar por subir grabaciones a sus propias cuentas de almacenamiento en la nube, incluyendo Google Drive, Dropbox, OneDrive, Box e iCloud. Estas subidas son iniciadas &uacute;nicamente por usted y se dirigen directamente a sus cuentas personales. No tenemos acceso a sus credenciales de almacenamiento en la nube ni a los archivos subidos.</p>
+                <p>Puede subir grabaciones a sus propias cuentas de almacenamiento en la nube (Google Drive, Dropbox, OneDrive, Box, iCloud). Estas subidas son iniciadas &uacute;nicamente por usted. No tenemos acceso a sus credenciales ni a los archivos subidos.</p>
             </div>
 
             <div class="section">
-                <h3>3. Sin servidores del desarrollador</h3>
-                <p>Voicloud no transmite ninguno de sus datos personales, grabaciones o transcripciones a servidores propiedad del desarrollador o gestionados por este. Todo el procesamiento se realiza en su dispositivo o dentro de los servicios en la nube que usted haya autorizado expl&iacute;citamente.</p>
+                <h3>3. Sin servidores del desarrollador y sin retenci&oacute;n de datos personales</h3>
+                <p>Voicloud no transmite datos personales, grabaciones ni transcripciones a servidores del desarrollador. Todo el procesamiento se realiza en su dispositivo o en los servicios en la nube que usted haya autorizado. En consecuencia, el desarrollador no posee datos personales sujetos a solicitudes de divulgaci&oacute;n, correcci&oacute;n o eliminaci&oacute;n.</p>
             </div>
 
             <div class="section">
                 <h3>4. Transcripci&oacute;n</h3>
-                <p>La transcripci&oacute;n de voz a texto se realiza &iacute;ntegramente en su dispositivo utilizando motores locales (WhisperKit, Apple SpeechAnalyzer). No se env&iacute;an datos de audio a servidores externos con fines de transcripci&oacute;n.</p>
+                <p>La transcripci&oacute;n de voz a texto se realiza &iacute;ntegramente en su dispositivo utilizando motores locales (WhisperKit, Apple SpeechAnalyzer). No se env&iacute;an datos de audio a servidores externos.</p>
             </div>
 
             <div class="section">
-                <h3>5. Publicidad</h3>
-                <p>La Aplicaci&oacute;n utiliza Google AdMob para mostrar anuncios. Google AdMob puede recopilar ciertos datos del dispositivo y de uso de acuerdo con la pol&iacute;tica de privacidad de Google. Para m&aacute;s informaci&oacute;n sobre c&oacute;mo Google gestiona sus datos, visite: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pol&iacute;tica de Privacidad de Google</a>.</p>
+                <h3>5. Publicidad y recolecci&oacute;n de datos por terceros</h3>
+                <p>La Aplicaci&oacute;n utiliza Google AdMob para mostrar anuncios. Google AdMob puede recopilar informaci&oacute;n del dispositivo, identificadores publicitarios (como IDFA) y datos de uso, y transmitirlos a servidores de Google ubicados fuera de su pa&iacute;s de residencia (incluido Estados Unidos). Esta recolecci&oacute;n se rige por la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pol&iacute;tica de Privacidad de Google</a>. El desarrollador no accede ni controla directamente los datos recopilados por Google AdMob.</p>
             </div>
 
             <div class="section">
                 <h3>6. An&aacute;lisis</h3>
-                <p>No recopilamos ning&uacute;n dato anal&iacute;tico. No se env&iacute;an estad&iacute;sticas de uso, informes de errores ni datos de comportamiento al desarrollador.</p>
+                <p>No recopilamos datos anal&iacute;ticos. No se env&iacute;an estad&iacute;sticas de uso, informes de errores ni datos de comportamiento al desarrollador.</p>
             </div>
 
             <div class="section">
                 <h3>7. Privacidad infantil</h3>
-                <p>Voicloud no est&aacute; dirigida a menores de 13 a&ntilde;os. No recopilamos deliberadamente informaci&oacute;n personal de menores de 13 a&ntilde;os. Si cree que un menor nos ha proporcionado datos personales, p&oacute;ngase en contacto con nosotros para que podamos tomar las medidas oportunas.</p>
+                <p>Voicloud no est&aacute; dirigida a menores de 13 a&ntilde;os. No recopilamos intencionalmente informaci&oacute;n personal de menores de 13 a&ntilde;os. Si cree que un menor nos ha proporcionado datos personales, cont&aacute;ctenos.</p>
             </div>
 
             <div class="section">
                 <h3>8. Cambios en esta pol&iacute;tica</h3>
-                <p>Podemos actualizar esta Pol&iacute;tica de Privacidad de vez en cuando. Los cambios se reflejar&aacute;n en esta p&aacute;gina con una fecha de vigencia actualizada. Le recomendamos revisar esta pol&iacute;tica peri&oacute;dicamente.</p>
+                <p>Podemos actualizar esta Pol&iacute;tica de Privacidad peri&oacute;dicamente. Los cambios significativos se comunicar&aacute;n mediante una notificaci&oacute;n en la aplicaci&oacute;n o notas de actualizaci&oacute;n. La pol&iacute;tica actualizada tambi&eacute;n se reflejar&aacute; en esta p&aacute;gina con una fecha de vigencia revisada.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. Legislaci&oacute;n aplicable</h3>
+                <p>Esta Pol&iacute;tica de Privacidad se regir&aacute; e interpretar&aacute; de acuerdo con las leyes de Jap&oacute;n.</p>
             </div>
 
             <div class="contact-info">
-                <h3>Cont&aacute;ctenos</h3>
-                <p>Si tiene alguna pregunta sobre esta Pol&iacute;tica de Privacidad, cont&aacute;ctenos en:<br>
+                <h3>Contacto</h3>
+                <p>Desarrollador: Mon Software<br>
+                Si tiene preguntas sobre esta Pol&iacute;tica de Privacidad, cont&aacute;ctenos en:<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -518,56 +435,62 @@
             <h2>Politique de Confidentialit&eacute;</h2>
             <p class="effective-date">Date d'entr&eacute;e en vigueur : 30 mars 2026</p>
 
-            <p>Cette Politique de Confidentialit&eacute; d&eacute;crit comment Voicloud (&laquo; l'Application &raquo;), d&eacute;velopp&eacute;e par Mon Software, g&egrave;re vos informations. Nous nous engageons &agrave; prot&eacute;ger votre vie priv&eacute;e et &agrave; &ecirc;tre transparents dans nos pratiques.</p>
+            <p>Cette Politique de Confidentialit&eacute; d&eacute;crit comment Voicloud (&laquo; l'Application &raquo;), d&eacute;velopp&eacute;e par Mon Software, traite vos informations. Nous nous engageons &agrave; prot&eacute;ger votre vie priv&eacute;e et &agrave; faire preuve de transparence.</p>
 
             <div class="section">
-                <h3>1. Donn&eacute;es que nous collectons</h3>
-                <p>L'Application peut acc&eacute;der aux donn&eacute;es suivantes, qui restent toutes sur votre appareil sauf si vous choisissez explicitement de les t&eacute;l&eacute;charger :</p>
+                <h3>1. Donn&eacute;es collect&eacute;es</h3>
+                <p>L'Application peut acc&eacute;der aux donn&eacute;es suivantes, qui restent toutes sur votre appareil sauf si vous choisissez explicitement de les t&eacute;l&eacute;verser :</p>
                 <ul>
-                    <li><strong>Enregistrements audio</strong> &mdash; Les enregistrements vocaux que vous cr&eacute;ez sont stock&eacute;s localement sur votre appareil.</li>
-                    <li><strong>Donn&eacute;es de localisation (optionnel)</strong> &mdash; Si vous accordez la permission, l'Application peut associer vos enregistrements &agrave; votre position. Ces donn&eacute;es sont stock&eacute;es localement et ne sont jamais envoy&eacute;es &agrave; nos serveurs.</li>
-                    <li><strong>Donn&eacute;es du calendrier (lecture seule)</strong> &mdash; Si vous accordez la permission, l'Application lit vos &eacute;v&eacute;nements de calendrier pour sugg&eacute;rer des noms de fichiers pour les enregistrements. L'Application ne modifie ni ne stocke vos donn&eacute;es de calendrier.</li>
+                    <li><strong>Enregistrements audio</strong> &mdash; Vos enregistrements vocaux sont stock&eacute;s localement sur votre appareil.</li>
+                    <li><strong>Donn&eacute;es de localisation (facultatif)</strong> &mdash; Si vous accordez la permission, l'Application peut associer votre position &agrave; vos enregistrements. Ces donn&eacute;es restent locales.</li>
+                    <li><strong>Donn&eacute;es de calendrier (lecture seule)</strong> &mdash; Si vous accordez la permission, l'Application lit vos &eacute;v&eacute;nements de calendrier pour sugg&eacute;rer des noms de fichiers. L'Application ne modifie ni ne stocke vos donn&eacute;es de calendrier.</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h3>2. T&eacute;l&eacute;chargements vers le cloud</h3>
-                <p>Vous pouvez choisir de t&eacute;l&eacute;charger vos enregistrements vers vos propres comptes de stockage cloud, notamment Google Drive, Dropbox, OneDrive, Box et iCloud. Ces t&eacute;l&eacute;chargements sont initi&eacute;s uniquement par vous et vont directement vers vos comptes personnels. Nous n'avons pas acc&egrave;s &agrave; vos identifiants de stockage cloud ni &agrave; vos fichiers t&eacute;l&eacute;charg&eacute;s.</p>
+                <h3>2. T&eacute;l&eacute;versement cloud</h3>
+                <p>Vous pouvez t&eacute;l&eacute;verser vos enregistrements vers vos propres comptes de stockage cloud (Google Drive, Dropbox, OneDrive, Box, iCloud). Ces t&eacute;l&eacute;versements sont initi&eacute;s uniquement par vous. Nous n'avons pas acc&egrave;s &agrave; vos identifiants ni &agrave; vos fichiers.</p>
             </div>
 
             <div class="section">
-                <h3>3. Aucun serveur du d&eacute;veloppeur</h3>
-                <p>Voicloud ne transmet aucune de vos donn&eacute;es personnelles, enregistrements ou transcriptions &agrave; des serveurs d&eacute;tenus ou exploit&eacute;s par le d&eacute;veloppeur. Tout le traitement se fait sur votre appareil ou au sein des services cloud que vous avez explicitement autoris&eacute;s.</p>
+                <h3>3. Aucun serveur du d&eacute;veloppeur et non-r&eacute;tention des donn&eacute;es personnelles</h3>
+                <p>Voicloud ne transmet aucune donn&eacute;e personnelle, enregistrement ou transcription aux serveurs du d&eacute;veloppeur. Tout le traitement s'effectue sur votre appareil ou dans les services cloud que vous avez autoris&eacute;s. Par cons&eacute;quent, le d&eacute;veloppeur ne d&eacute;tient aucune donn&eacute;e personnelle susceptible de faire l'objet de demandes de divulgation, de rectification ou de suppression.</p>
             </div>
 
             <div class="section">
                 <h3>4. Transcription</h3>
-                <p>La transcription vocale est effectu&eacute;e enti&egrave;rement sur votre appareil &agrave; l'aide de moteurs embarqu&eacute;s (WhisperKit, Apple SpeechAnalyzer). Aucune donn&eacute;e audio n'est envoy&eacute;e &agrave; des serveurs externes &agrave; des fins de transcription.</p>
+                <p>La transcription voix-texte est enti&egrave;rement r&eacute;alis&eacute;e sur votre appareil &agrave; l'aide de moteurs embarqu&eacute;s (WhisperKit, Apple SpeechAnalyzer). Aucune donn&eacute;e audio n'est envoy&eacute;e &agrave; des serveurs externes.</p>
             </div>
 
             <div class="section">
-                <h3>5. Publicit&eacute;</h3>
-                <p>L'Application utilise Google AdMob pour afficher des publicit&eacute;s. Google AdMob peut collecter certaines donn&eacute;es de l'appareil et d'utilisation conform&eacute;ment &agrave; la politique de confidentialit&eacute; de Google. Pour plus de d&eacute;tails sur la mani&egrave;re dont Google traite vos donn&eacute;es, veuillez consulter : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de Confidentialit&eacute; de Google</a>.</p>
+                <h3>5. Publicit&eacute; et collecte de donn&eacute;es par des tiers</h3>
+                <p>L'Application utilise Google AdMob pour afficher des publicit&eacute;s. Google AdMob peut collecter des informations sur l'appareil, des identifiants publicitaires (tels que l'IDFA) et des donn&eacute;es d'utilisation, et les transmettre &agrave; des serveurs Google situ&eacute;s en dehors de votre pays de r&eacute;sidence (y compris les &Eacute;tats-Unis). Cette collecte est r&eacute;gie par la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de Confidentialit&eacute; de Google</a>. Le d&eacute;veloppeur n'acc&egrave;de pas directement aux donn&eacute;es collect&eacute;es par Google AdMob et ne les contr&ocirc;le pas.</p>
             </div>
 
             <div class="section">
-                <h3>6. Analytique</h3>
+                <h3>6. Analyse</h3>
                 <p>Nous ne collectons aucune donn&eacute;e analytique. Aucune statistique d'utilisation, rapport de plantage ou donn&eacute;e comportementale n'est envoy&eacute;e au d&eacute;veloppeur.</p>
             </div>
 
             <div class="section">
-                <h3>7. Confidentialit&eacute; des enfants</h3>
-                <p>Voicloud ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles aupr&egrave;s d'enfants de moins de 13 ans. Si vous pensez qu'un enfant nous a fourni des donn&eacute;es personnelles, veuillez nous contacter afin que nous puissions prendre les mesures appropri&eacute;es.</p>
+                <h3>7. Vie priv&eacute;e des enfants</h3>
+                <p>Voicloud ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas intentionnellement d'informations personnelles d'enfants de moins de 13 ans. Si vous pensez qu'un enfant nous a fourni des donn&eacute;es personnelles, veuillez nous contacter.</p>
             </div>
 
             <div class="section">
                 <h3>8. Modifications de cette politique</h3>
-                <p>Nous pouvons mettre &agrave; jour cette Politique de Confidentialit&eacute; de temps &agrave; autre. Tout changement sera refl&eacute;t&eacute; sur cette page avec une date d'entr&eacute;e en vigueur mise &agrave; jour. Nous vous encourageons &agrave; consulter cette politique p&eacute;riodiquement.</p>
+                <p>Nous pouvons mettre &agrave; jour cette Politique p&eacute;riodiquement. Les modifications importantes seront communiqu&eacute;es par une notification dans l'application ou des notes de mise &agrave; jour. La politique mise &agrave; jour sera &eacute;galement refl&eacute;t&eacute;e sur cette page avec une date d'entr&eacute;e en vigueur r&eacute;vis&eacute;e.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. Droit applicable</h3>
+                <p>Cette Politique de Confidentialit&eacute; est r&eacute;gie et interpr&eacute;t&eacute;e conform&eacute;ment au droit japonais.</p>
             </div>
 
             <div class="contact-info">
                 <h3>Nous contacter</h3>
-                <p>Si vous avez des questions concernant cette Politique de Confidentialit&eacute;, veuillez nous contacter &agrave; :<br>
+                <p>D&eacute;veloppeur : Mon Software<br>
+                Pour toute question concernant cette Politique de Confidentialit&eacute;, contactez-nous &agrave; :<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
@@ -577,120 +500,101 @@
             <h2>Datenschutzerkl&auml;rung</h2>
             <p class="effective-date">G&uuml;ltig ab: 30. M&auml;rz 2026</p>
 
-            <p>Diese Datenschutzerkl&auml;rung beschreibt, wie Voicloud (&bdquo;die App&ldquo;), entwickelt von Mon Software, mit Ihren Informationen umgeht. Wir verpflichten uns, Ihre Privatsph&auml;re zu sch&uuml;tzen und unsere Praktiken transparent zu gestalten.</p>
+            <p>Diese Datenschutzerkl&auml;rung beschreibt, wie Voicloud (&bdquo;die App&ldquo;), entwickelt von Mon Software, mit Ihren Informationen umgeht. Wir verpflichten uns, Ihre Privatsph&auml;re zu sch&uuml;tzen und transparent zu handeln.</p>
 
             <div class="section">
-                <h3>1. Daten, die wir erheben</h3>
-                <p>Die App kann auf die folgenden Daten zugreifen, die alle auf Ihrem Ger&auml;t verbleiben, sofern Sie sich nicht ausdr&uuml;cklich f&uuml;r das Hochladen entscheiden:</p>
+                <h3>1. Erhobene Daten</h3>
+                <p>Die App kann auf folgende Daten zugreifen, die alle auf Ihrem Ger&auml;t verbleiben, es sei denn, Sie entscheiden sich ausdr&uuml;cklich f&uuml;r einen Upload:</p>
                 <ul>
-                    <li><strong>Audioaufnahmen</strong> &mdash; Von Ihnen erstellte Sprachaufnahmen werden lokal auf Ihrem Ger&auml;t gespeichert.</li>
-                    <li><strong>Standortdaten (optional)</strong> &mdash; Wenn Sie die Berechtigung erteilen, kann die App Aufnahmen mit Ihrem Standort versehen. Diese Daten werden lokal gespeichert und niemals an unsere Server &uuml;bermittelt.</li>
-                    <li><strong>Kalenderdaten (schreibgesch&uuml;tzt)</strong> &mdash; Wenn Sie die Berechtigung erteilen, liest die App Ihre Kalendereintr&auml;ge, um Dateinamen f&uuml;r Aufnahmen vorzuschlagen. Die App &auml;ndert oder speichert Ihre Kalenderdaten nicht.</li>
+                    <li><strong>Audioaufnahmen</strong> &mdash; Ihre Sprachaufnahmen werden lokal auf Ihrem Ger&auml;t gespeichert.</li>
+                    <li><strong>Standortdaten (optional)</strong> &mdash; Mit Ihrer Erlaubnis kann die App Aufnahmen mit Ihrem Standort versehen. Diese Daten werden lokal gespeichert und nie an unsere Server gesendet.</li>
+                    <li><strong>Kalenderdaten (schreibgesch&uuml;tzt)</strong> &mdash; Mit Ihrer Erlaubnis liest die App Ihre Kalendereintr&auml;ge, um Dateinamen vorzuschlagen. Die App &auml;ndert oder speichert Ihre Kalenderdaten nicht.</li>
                 </ul>
             </div>
 
             <div class="section">
                 <h3>2. Cloud-Uploads</h3>
-                <p>Sie k&ouml;nnen Aufnahmen in Ihre eigenen Cloud-Speicher-Konten hochladen, darunter Google Drive, Dropbox, OneDrive, Box und iCloud. Diese Uploads werden ausschlie&szlig;lich von Ihnen initiiert und gehen direkt an Ihre pers&ouml;nlichen Konten. Wir haben keinen Zugriff auf Ihre Cloud-Speicher-Anmeldedaten oder hochgeladenen Dateien.</p>
+                <p>Sie k&ouml;nnen Aufnahmen in Ihre eigenen Cloud-Speicherkonten hochladen (Google Drive, Dropbox, OneDrive, Box, iCloud). Diese Uploads werden ausschlie&szlig;lich von Ihnen initiiert. Wir haben keinen Zugriff auf Ihre Anmeldedaten oder hochgeladenen Dateien.</p>
             </div>
 
             <div class="section">
-                <h3>3. Keine Entwickler-Server</h3>
-                <p>Voicloud &uuml;bermittelt keine Ihrer pers&ouml;nlichen Daten, Aufnahmen oder Transkriptionen an Server, die dem Entwickler geh&ouml;ren oder von ihm betrieben werden. Die gesamte Verarbeitung erfolgt auf Ihrem Ger&auml;t oder innerhalb von Cloud-Diensten, die Sie ausdr&uuml;cklich autorisiert haben.</p>
+                <h3>3. Keine Entwicklerserver und keine Speicherung personenbezogener Daten</h3>
+                <p>Voicloud &uuml;bertr&auml;gt keine Ihrer personenbezogenen Daten, Aufnahmen oder Transkriptionen an vom Entwickler betriebene Server. Alle Verarbeitungen finden auf Ihrem Ger&auml;t oder innerhalb der von Ihnen autorisierten Cloud-Dienste statt. Dementsprechend verf&uuml;gt der Entwickler &uuml;ber keine personenbezogenen Daten, die Gegenstand von Auskunfts-, Berichtigungs- oder L&ouml;schungsantr&auml;gen sein k&ouml;nnten.</p>
             </div>
 
             <div class="section">
                 <h3>4. Transkription</h3>
-                <p>Die Sprache-zu-Text-Transkription wird vollst&auml;ndig auf Ihrem Ger&auml;t mit ger&auml;teinternen Engines (WhisperKit, Apple SpeechAnalyzer) durchgef&uuml;hrt. Zu Transkriptionszwecken werden keine Audiodaten an externe Server gesendet.</p>
+                <p>Die Sprache-zu-Text-Transkription wird vollst&auml;ndig auf Ihrem Ger&auml;t mit ger&auml;teinternen Engines (WhisperKit, Apple SpeechAnalyzer) durchgef&uuml;hrt. Keine Audiodaten werden an externe Server gesendet.</p>
             </div>
 
             <div class="section">
-                <h3>5. Werbung</h3>
-                <p>Die App verwendet Google AdMob zur Anzeige von Werbung. Google AdMob kann bestimmte Ger&auml;te- und Nutzungsdaten gem&auml;&szlig; der Datenschutzrichtlinie von Google erheben. Einzelheiten dar&uuml;ber, wie Google mit Ihren Daten umgeht, finden Sie unter: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google-Datenschutzerkl&auml;rung</a>.</p>
+                <h3>5. Werbung und Datenerfassung durch Dritte</h3>
+                <p>Die App verwendet Google AdMob zur Anzeige von Werbung. Google AdMob kann Ger&auml;teinformationen, Werbe-Identifikatoren (wie IDFA) und Nutzungsdaten erheben und an Google-Server au&szlig;erhalb Ihres Wohnsitzlandes (&uuml;bertragen einschlie&szlig;lich der USA). Diese Datenerhebung unterliegt der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerkl&auml;rung von Google</a>. Der Entwickler hat keinen direkten Zugriff auf die von Google AdMob erhobenen Daten.</p>
             </div>
 
             <div class="section">
                 <h3>6. Analysen</h3>
-                <p>Wir erheben keine Analysedaten. Es werden keine Nutzungsstatistiken, Absturzberichte oder Verhaltensdaten an den Entwickler gesendet.</p>
+                <p>Wir erheben keine Analysedaten. Keine Nutzungsstatistiken, Absturzberichte oder Verhaltensdaten werden an den Entwickler gesendet.</p>
             </div>
 
             <div class="section">
                 <h3>7. Datenschutz f&uuml;r Kinder</h3>
-                <p>Voicloud richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Wenn Sie glauben, dass ein Kind uns personenbezogene Daten zur Verf&uuml;gung gestellt hat, kontaktieren Sie uns bitte, damit wir geeignete Ma&szlig;nahmen ergreifen k&ouml;nnen.</p>
+                <p>Voicloud richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Wenn Sie glauben, dass ein Kind uns personenbezogene Daten bereitgestellt hat, kontaktieren Sie uns bitte.</p>
             </div>
 
             <div class="section">
-                <h3>8. &Auml;nderungen dieser Richtlinie</h3>
-                <p>Wir k&ouml;nnen diese Datenschutzerkl&auml;rung von Zeit zu Zeit aktualisieren. &Auml;nderungen werden auf dieser Seite mit einem aktualisierten G&uuml;ltigkeitsdatum widergespiegelt. Wir empfehlen Ihnen, diese Richtlinie regelm&auml;&szlig;ig zu &uuml;berpr&uuml;fen.</p>
+                <h3>8. &Auml;nderungen dieser Erkl&auml;rung</h3>
+                <p>Wir k&ouml;nnen diese Datenschutzerkl&auml;rung gelegentlich aktualisieren. Wesentliche &Auml;nderungen werden durch eine In-App-Benachrichtigung oder Update-Hinweise mitgeteilt. Die aktualisierte Erkl&auml;rung wird auch auf dieser Seite mit einem &uuml;berarbeiteten G&uuml;ltigkeitsdatum ver&ouml;ffentlicht.</p>
+            </div>
+
+            <div class="section">
+                <h3>9. Anwendbares Recht</h3>
+                <p>Diese Datenschutzerkl&auml;rung unterliegt dem japanischen Recht und wird nach diesem ausgelegt.</p>
             </div>
 
             <div class="contact-info">
                 <h3>Kontakt</h3>
-                <p>Wenn Sie Fragen zu dieser Datenschutzerkl&auml;rung haben, kontaktieren Sie uns bitte unter:<br>
+                <p>Entwickler: Mon Software<br>
+                Bei Fragen zu dieser Datenschutzerkl&auml;rung kontaktieren Sie uns unter:<br>
                 <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
             </div>
         </section>
 
         <footer>
-            &copy; 2026 Mon Software. All rights reserved.
+            <p>&copy; 2026 Mon Software. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        (function() {
-            var buttons = document.querySelectorAll('.lang-nav button');
-            var sections = document.querySelectorAll('.lang-section');
-            var supported = ['en', 'ja', 'zh-Hans', 'ko', 'es', 'fr', 'de'];
-
-            function switchLang(lang) {
-                sections.forEach(function(s) {
-                    s.classList.remove('active');
-                });
-                buttons.forEach(function(b) {
-                    b.classList.remove('active');
-                });
-                var target = document.getElementById('lang-' + lang);
-                if (target) {
-                    target.classList.add('active');
-                }
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-section').forEach(function(s) { s.classList.remove('active'); });
+            document.querySelectorAll('.lang-nav button').forEach(function(b) { b.classList.remove('active'); });
+            var section = document.getElementById('lang-' + lang);
+            if (section) {
+                section.classList.add('active');
                 var btn = document.querySelector('.lang-nav button[data-lang="' + lang + '"]');
-                if (btn) {
-                    btn.classList.add('active');
-                }
+                if (btn) btn.classList.add('active');
             }
+        }
+        document.querySelectorAll('.lang-nav button').forEach(function(btn) {
+            btn.addEventListener('click', function() { switchLang(this.getAttribute('data-lang')); });
+        });
 
-            buttons.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    switchLang(this.getAttribute('data-lang'));
-                });
-            });
-
-            // 1. Check URL parameter ?lang=xx (highest priority)
-            var urlParams = new URLSearchParams(window.location.search);
-            var langParam = urlParams.get('lang');
-            if (langParam) {
-                // Normalize: support both zh-Hans and zh
-                if (langParam === 'zh' || langParam === 'zh-CN' || langParam === 'zh-SG') {
-                    langParam = 'zh-Hans';
-                }
-                if (supported.indexOf(langParam) !== -1) {
-                    switchLang(langParam);
-                    return;
-                }
+        (function() {
+            var supported = ['en', 'ja', 'zh-Hans', 'ko', 'es', 'fr', 'de'];
+            var params = new URLSearchParams(window.location.search);
+            var langParam = params.get('lang');
+            if (langParam && supported.indexOf(langParam) !== -1) {
+                switchLang(langParam);
+                return;
             }
-
-            // 2. Fall back to browser language detection
             var browserLang = navigator.language || navigator.userLanguage || 'en';
             var detected = 'en';
-
-            // Exact match first
             if (supported.indexOf(browserLang) !== -1) {
                 detected = browserLang;
             } else {
-                // Try base language code
                 var base = browserLang.split('-')[0];
                 if (base === 'zh') {
-                    // Map zh-CN, zh-SG etc. to zh-Hans; others stay en
                     if (browserLang === 'zh-CN' || browserLang === 'zh-SG' || browserLang === 'zh-Hans') {
                         detected = 'zh-Hans';
                     }
@@ -698,8 +602,6 @@
                     detected = base;
                 }
             }
-
-            // 3. Default to English (already set as 'en')
             switchLang(detected);
         })();
     </script>
