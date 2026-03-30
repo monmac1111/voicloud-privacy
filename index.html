@@ -640,6 +640,7 @@
         (function() {
             var buttons = document.querySelectorAll('.lang-nav button');
             var sections = document.querySelectorAll('.lang-section');
+            var supported = ['en', 'ja', 'zh-Hans', 'ko', 'es', 'fr', 'de'];
 
             function switchLang(lang) {
                 sections.forEach(function(s) {
@@ -664,8 +665,21 @@
                 });
             });
 
-            // Auto-detect browser language
-            var supported = ['en', 'ja', 'zh-Hans', 'ko', 'es', 'fr', 'de'];
+            // 1. Check URL parameter ?lang=xx (highest priority)
+            var urlParams = new URLSearchParams(window.location.search);
+            var langParam = urlParams.get('lang');
+            if (langParam) {
+                // Normalize: support both zh-Hans and zh
+                if (langParam === 'zh' || langParam === 'zh-CN' || langParam === 'zh-SG') {
+                    langParam = 'zh-Hans';
+                }
+                if (supported.indexOf(langParam) !== -1) {
+                    switchLang(langParam);
+                    return;
+                }
+            }
+
+            // 2. Fall back to browser language detection
             var browserLang = navigator.language || navigator.userLanguage || 'en';
             var detected = 'en';
 
@@ -685,6 +699,7 @@
                 }
             }
 
+            // 3. Default to English (already set as 'en')
             switchLang(detected);
         })();
     </script>
