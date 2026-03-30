@@ -62,30 +62,32 @@
         .lang-nav {
             display: flex;
             justify-content: center;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
             margin-top: 20px;
         }
 
-        .lang-nav a {
+        .lang-nav button {
             color: var(--accent);
-            text-decoration: none;
-            font-size: 14px;
+            background: transparent;
+            font-size: 13px;
             font-weight: 500;
-            padding: 6px 16px;
+            padding: 6px 14px;
             border: 1px solid var(--accent);
             border-radius: 20px;
+            cursor: pointer;
             transition: all 0.2s;
+            font-family: inherit;
         }
 
-        .lang-nav a:hover {
+        .lang-nav button:hover {
             background-color: var(--accent);
             color: #fff;
         }
 
-        .divider {
-            border: none;
-            border-top: 2px solid var(--border);
-            margin: 56px 0;
+        .lang-nav button.active {
+            background-color: var(--accent);
+            color: #fff;
         }
 
         h2 {
@@ -159,6 +161,14 @@
             font-weight: 600;
         }
 
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.active {
+            display: block;
+        }
+
         footer {
             text-align: center;
             margin-top: 48px;
@@ -181,6 +191,13 @@
             .section {
                 padding: 20px;
             }
+            .lang-nav {
+                gap: 6px;
+            }
+            .lang-nav button {
+                font-size: 12px;
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -191,15 +208,20 @@
             <h1>Voicloud Privacy Policy</h1>
             <p class="subtitle">Mon Software</p>
             <nav class="lang-nav">
-                <a href="#english">English</a>
-                <a href="#japanese">日本語</a>
+                <button data-lang="en" class="active">English</button>
+                <button data-lang="ja">日本語</button>
+                <button data-lang="zh-Hans">中文简体</button>
+                <button data-lang="ko">한국어</button>
+                <button data-lang="es">Español</button>
+                <button data-lang="fr">Français</button>
+                <button data-lang="de">Deutsch</button>
             </nav>
         </header>
 
         <!-- ==================== ENGLISH ==================== -->
-        <section id="english">
+        <section id="lang-en" class="lang-section active">
             <h2>Privacy Policy</h2>
-            <p class="effective-date">Effective Date: March 29, 2026</p>
+            <p class="effective-date">Effective Date: March 30, 2026</p>
 
             <p>This Privacy Policy describes how Voicloud ("the App"), developed by Mon Software, handles your information. We are committed to protecting your privacy and being transparent about our practices.</p>
 
@@ -255,12 +277,10 @@
             </div>
         </section>
 
-        <hr class="divider">
-
         <!-- ==================== JAPANESE ==================== -->
-        <section id="japanese">
+        <section id="lang-ja" class="lang-section">
             <h2>プライバシーポリシー</h2>
-            <p class="effective-date">施行日: 2026年3月29日</p>
+            <p class="effective-date">施行日: 2026年3月30日</p>
 
             <p>本プライバシーポリシーは、Mon Softwareが開発したVoicloud（以下「本アプリ」）における情報の取り扱いについて説明するものです。私たちはお客様のプライバシーを保護し、透明性のある運営を行うことをお約束します。</p>
 
@@ -316,9 +336,357 @@
             </div>
         </section>
 
+        <!-- ==================== CHINESE SIMPLIFIED ==================== -->
+        <section id="lang-zh-Hans" class="lang-section">
+            <h2>隐私政策</h2>
+            <p class="effective-date">生效日期：2026年3月30日</p>
+
+            <p>本隐私政策描述了由Mon Software开发的Voicloud（以下简称"本应用"）如何处理您的信息。我们致力于保护您的隐私，并对我们的做法保持透明。</p>
+
+            <div class="section">
+                <h3>1. 我们收集的数据</h3>
+                <p>本应用可能会访问以下数据，除非您明确选择上传，否则所有数据都将保留在您的设备上：</p>
+                <ul>
+                    <li><strong>录音</strong> — 您创建的语音录音存储在您的设备本地。</li>
+                    <li><strong>位置数据（可选）</strong> — 如果您授予权限，本应用可能会为录音标记您的位置。此数据存储在本地，绝不会发送到我们的服务器。</li>
+                    <li><strong>日历数据（只读）</strong> — 如果您授予权限，本应用会读取您的日历事件以建议录音文件名。本应用不会修改或存储您的日历数据。</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>2. 云端上传</h3>
+                <p>您可以选择将录音上传到您自己的云存储账户，包括Google Drive、Dropbox、OneDrive、Box和iCloud。这些上传完全由您发起，直接保存到您的个人账户。我们无法访问您的云存储凭据或上传的文件。</p>
+            </div>
+
+            <div class="section">
+                <h3>3. 无开发者服务器</h3>
+                <p>Voicloud不会将您的任何个人数据、录音或转录内容传输到开发者拥有或运营的服务器。所有处理都在您的设备上或您明确授权的云服务中进行。</p>
+            </div>
+
+            <div class="section">
+                <h3>4. 语音转文字</h3>
+                <p>语音转文字转录完全在您的设备上使用设备端引擎（WhisperKit、Apple SpeechAnalyzer）执行。不会为转录目的将音频数据发送到外部服务器。</p>
+            </div>
+
+            <div class="section">
+                <h3>5. 广告</h3>
+                <p>本应用使用Google AdMob展示广告。Google AdMob可能会根据Google的隐私政策收集某些设备和使用数据。有关Google如何处理您的数据的详细信息，请访问：<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google隐私政策</a>。</p>
+            </div>
+
+            <div class="section">
+                <h3>6. 数据分析</h3>
+                <p>我们不收集任何分析数据。不会向开发者发送使用统计、崩溃报告或行为数据。</p>
+            </div>
+
+            <div class="section">
+                <h3>7. 儿童隐私</h3>
+                <p>Voicloud不面向13岁以下的儿童。我们不会故意收集13岁以下儿童的个人信息。如果您认为某位儿童向我们提供了个人数据，请联系我们以便我们采取适当措施。</p>
+            </div>
+
+            <div class="section">
+                <h3>8. 政策变更</h3>
+                <p>我们可能会不时更新本隐私政策。任何更改都将在此页面上反映，并更新生效日期。我们建议您定期查阅本政策。</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>联系我们</h3>
+                <p>如果您对本隐私政策有任何疑问，请通过以下方式联系我们：<br>
+                <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== KOREAN ==================== -->
+        <section id="lang-ko" class="lang-section">
+            <h2>개인정보 처리방침</h2>
+            <p class="effective-date">시행일: 2026년 3월 30일</p>
+
+            <p>본 개인정보 처리방침은 Mon Software가 개발한 Voicloud(이하 "본 앱")의 정보 처리 방식에 대해 설명합니다. 당사는 귀하의 개인정보를 보호하고 투명한 운영을 위해 최선을 다하고 있습니다.</p>
+
+            <div class="section">
+                <h3>1. 수집하는 데이터</h3>
+                <p>본 앱은 다음 데이터에 접근할 수 있으며, 귀하가 명시적으로 업로드를 선택하지 않는 한 모든 데이터는 기기에 저장됩니다:</p>
+                <ul>
+                    <li><strong>음성 녹음</strong> — 생성한 음성 녹음은 기기에 로컬로 저장됩니다.</li>
+                    <li><strong>위치 데이터(선택 사항)</strong> — 권한을 부여하면 본 앱이 녹음에 위치 정보를 태그할 수 있습니다. 이 데이터는 로컬에 저장되며 당사 서버로 전송되지 않습니다.</li>
+                    <li><strong>캘린더 데이터(읽기 전용)</strong> — 권한을 부여하면 본 앱이 녹음 파일명을 제안하기 위해 캘린더 일정을 읽습니다. 본 앱은 캘린더 데이터를 수정하거나 저장하지 않습니다.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>2. 클라우드 업로드</h3>
+                <p>Google Drive, Dropbox, OneDrive, Box, iCloud를 포함한 개인 클라우드 스토리지 계정에 녹음을 업로드할 수 있습니다. 이러한 업로드는 전적으로 귀하에 의해 시작되며 개인 계정으로 직접 전송됩니다. 당사는 귀하의 클라우드 스토리지 인증 정보나 업로드된 파일에 접근하지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>3. 개발자 서버 미사용</h3>
+                <p>Voicloud는 귀하의 개인 데이터, 녹음 또는 텍스트 변환 내용을 개발자가 소유하거나 운영하는 서버로 전송하지 않습니다. 모든 처리는 귀하의 기기 또는 귀하가 명시적으로 승인한 클라우드 서비스 내에서 이루어집니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>4. 음성 텍스트 변환</h3>
+                <p>음성-텍스트 변환은 기기 내 엔진(WhisperKit, Apple SpeechAnalyzer)을 사용하여 전적으로 기기에서 수행됩니다. 텍스트 변환 목적으로 음성 데이터가 외부 서버로 전송되지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>5. 광고</h3>
+                <p>본 앱은 Google AdMob을 사용하여 광고를 표시합니다. Google AdMob은 Google의 개인정보 처리방침에 따라 특정 기기 및 사용 데이터를 수집할 수 있습니다. Google의 데이터 처리 방식에 대한 자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보 처리방침</a>을 참조하세요.</p>
+            </div>
+
+            <div class="section">
+                <h3>6. 분석</h3>
+                <p>당사는 분석 데이터를 수집하지 않습니다. 사용 통계, 충돌 보고서 또는 행동 데이터가 개발자에게 전송되지 않습니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>7. 아동의 개인정보</h3>
+                <p>Voicloud는 13세 미만의 아동을 대상으로 하지 않습니다. 당사는 13세 미만 아동의 개인정보를 고의로 수집하지 않습니다. 아동이 당사에 개인 데이터를 제공했다고 판단되는 경우, 적절한 조치를 취할 수 있도록 연락해 주시기 바랍니다.</p>
+            </div>
+
+            <div class="section">
+                <h3>8. 정책 변경</h3>
+                <p>당사는 수시로 본 개인정보 처리방침을 업데이트할 수 있습니다. 변경 사항은 시행일을 업데이트하여 이 페이지에 반영됩니다. 본 정책을 주기적으로 확인하시기 바랍니다.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>문의</h3>
+                <p>본 개인정보 처리방침에 관한 질문이 있으시면 아래로 연락해 주세요:<br>
+                <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== SPANISH ==================== -->
+        <section id="lang-es" class="lang-section">
+            <h2>Pol&iacute;tica de Privacidad</h2>
+            <p class="effective-date">Fecha de vigencia: 30 de marzo de 2026</p>
+
+            <p>Esta Pol&iacute;tica de Privacidad describe c&oacute;mo Voicloud (&ldquo;la Aplicaci&oacute;n&rdquo;), desarrollada por Mon Software, gestiona su informaci&oacute;n. Nos comprometemos a proteger su privacidad y a ser transparentes en nuestras pr&aacute;cticas.</p>
+
+            <div class="section">
+                <h3>1. Datos que recopilamos</h3>
+                <p>La Aplicaci&oacute;n puede acceder a los siguientes datos, todos los cuales permanecen en su dispositivo a menos que usted elija expl&iacute;citamente subirlos:</p>
+                <ul>
+                    <li><strong>Grabaciones de audio</strong> &mdash; Las grabaciones de voz que usted crea se almacenan localmente en su dispositivo.</li>
+                    <li><strong>Datos de ubicaci&oacute;n (opcional)</strong> &mdash; Si otorga permiso, la Aplicaci&oacute;n puede etiquetar las grabaciones con su ubicaci&oacute;n. Estos datos se almacenan localmente y nunca se env&iacute;an a nuestros servidores.</li>
+                    <li><strong>Datos del calendario (solo lectura)</strong> &mdash; Si otorga permiso, la Aplicaci&oacute;n lee sus eventos del calendario para sugerir nombres de archivo para las grabaciones. La Aplicaci&oacute;n no modifica ni almacena sus datos del calendario.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>2. Subidas a la nube</h3>
+                <p>Puede optar por subir grabaciones a sus propias cuentas de almacenamiento en la nube, incluyendo Google Drive, Dropbox, OneDrive, Box e iCloud. Estas subidas son iniciadas &uacute;nicamente por usted y se dirigen directamente a sus cuentas personales. No tenemos acceso a sus credenciales de almacenamiento en la nube ni a los archivos subidos.</p>
+            </div>
+
+            <div class="section">
+                <h3>3. Sin servidores del desarrollador</h3>
+                <p>Voicloud no transmite ninguno de sus datos personales, grabaciones o transcripciones a servidores propiedad del desarrollador o gestionados por este. Todo el procesamiento se realiza en su dispositivo o dentro de los servicios en la nube que usted haya autorizado expl&iacute;citamente.</p>
+            </div>
+
+            <div class="section">
+                <h3>4. Transcripci&oacute;n</h3>
+                <p>La transcripci&oacute;n de voz a texto se realiza &iacute;ntegramente en su dispositivo utilizando motores locales (WhisperKit, Apple SpeechAnalyzer). No se env&iacute;an datos de audio a servidores externos con fines de transcripci&oacute;n.</p>
+            </div>
+
+            <div class="section">
+                <h3>5. Publicidad</h3>
+                <p>La Aplicaci&oacute;n utiliza Google AdMob para mostrar anuncios. Google AdMob puede recopilar ciertos datos del dispositivo y de uso de acuerdo con la pol&iacute;tica de privacidad de Google. Para m&aacute;s informaci&oacute;n sobre c&oacute;mo Google gestiona sus datos, visite: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Pol&iacute;tica de Privacidad de Google</a>.</p>
+            </div>
+
+            <div class="section">
+                <h3>6. An&aacute;lisis</h3>
+                <p>No recopilamos ning&uacute;n dato anal&iacute;tico. No se env&iacute;an estad&iacute;sticas de uso, informes de errores ni datos de comportamiento al desarrollador.</p>
+            </div>
+
+            <div class="section">
+                <h3>7. Privacidad infantil</h3>
+                <p>Voicloud no est&aacute; dirigida a menores de 13 a&ntilde;os. No recopilamos deliberadamente informaci&oacute;n personal de menores de 13 a&ntilde;os. Si cree que un menor nos ha proporcionado datos personales, p&oacute;ngase en contacto con nosotros para que podamos tomar las medidas oportunas.</p>
+            </div>
+
+            <div class="section">
+                <h3>8. Cambios en esta pol&iacute;tica</h3>
+                <p>Podemos actualizar esta Pol&iacute;tica de Privacidad de vez en cuando. Los cambios se reflejar&aacute;n en esta p&aacute;gina con una fecha de vigencia actualizada. Le recomendamos revisar esta pol&iacute;tica peri&oacute;dicamente.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Cont&aacute;ctenos</h3>
+                <p>Si tiene alguna pregunta sobre esta Pol&iacute;tica de Privacidad, cont&aacute;ctenos en:<br>
+                <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== FRENCH ==================== -->
+        <section id="lang-fr" class="lang-section">
+            <h2>Politique de Confidentialit&eacute;</h2>
+            <p class="effective-date">Date d'entr&eacute;e en vigueur : 30 mars 2026</p>
+
+            <p>Cette Politique de Confidentialit&eacute; d&eacute;crit comment Voicloud (&laquo; l'Application &raquo;), d&eacute;velopp&eacute;e par Mon Software, g&egrave;re vos informations. Nous nous engageons &agrave; prot&eacute;ger votre vie priv&eacute;e et &agrave; &ecirc;tre transparents dans nos pratiques.</p>
+
+            <div class="section">
+                <h3>1. Donn&eacute;es que nous collectons</h3>
+                <p>L'Application peut acc&eacute;der aux donn&eacute;es suivantes, qui restent toutes sur votre appareil sauf si vous choisissez explicitement de les t&eacute;l&eacute;charger :</p>
+                <ul>
+                    <li><strong>Enregistrements audio</strong> &mdash; Les enregistrements vocaux que vous cr&eacute;ez sont stock&eacute;s localement sur votre appareil.</li>
+                    <li><strong>Donn&eacute;es de localisation (optionnel)</strong> &mdash; Si vous accordez la permission, l'Application peut associer vos enregistrements &agrave; votre position. Ces donn&eacute;es sont stock&eacute;es localement et ne sont jamais envoy&eacute;es &agrave; nos serveurs.</li>
+                    <li><strong>Donn&eacute;es du calendrier (lecture seule)</strong> &mdash; Si vous accordez la permission, l'Application lit vos &eacute;v&eacute;nements de calendrier pour sugg&eacute;rer des noms de fichiers pour les enregistrements. L'Application ne modifie ni ne stocke vos donn&eacute;es de calendrier.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>2. T&eacute;l&eacute;chargements vers le cloud</h3>
+                <p>Vous pouvez choisir de t&eacute;l&eacute;charger vos enregistrements vers vos propres comptes de stockage cloud, notamment Google Drive, Dropbox, OneDrive, Box et iCloud. Ces t&eacute;l&eacute;chargements sont initi&eacute;s uniquement par vous et vont directement vers vos comptes personnels. Nous n'avons pas acc&egrave;s &agrave; vos identifiants de stockage cloud ni &agrave; vos fichiers t&eacute;l&eacute;charg&eacute;s.</p>
+            </div>
+
+            <div class="section">
+                <h3>3. Aucun serveur du d&eacute;veloppeur</h3>
+                <p>Voicloud ne transmet aucune de vos donn&eacute;es personnelles, enregistrements ou transcriptions &agrave; des serveurs d&eacute;tenus ou exploit&eacute;s par le d&eacute;veloppeur. Tout le traitement se fait sur votre appareil ou au sein des services cloud que vous avez explicitement autoris&eacute;s.</p>
+            </div>
+
+            <div class="section">
+                <h3>4. Transcription</h3>
+                <p>La transcription vocale est effectu&eacute;e enti&egrave;rement sur votre appareil &agrave; l'aide de moteurs embarqu&eacute;s (WhisperKit, Apple SpeechAnalyzer). Aucune donn&eacute;e audio n'est envoy&eacute;e &agrave; des serveurs externes &agrave; des fins de transcription.</p>
+            </div>
+
+            <div class="section">
+                <h3>5. Publicit&eacute;</h3>
+                <p>L'Application utilise Google AdMob pour afficher des publicit&eacute;s. Google AdMob peut collecter certaines donn&eacute;es de l'appareil et d'utilisation conform&eacute;ment &agrave; la politique de confidentialit&eacute; de Google. Pour plus de d&eacute;tails sur la mani&egrave;re dont Google traite vos donn&eacute;es, veuillez consulter : <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Politique de Confidentialit&eacute; de Google</a>.</p>
+            </div>
+
+            <div class="section">
+                <h3>6. Analytique</h3>
+                <p>Nous ne collectons aucune donn&eacute;e analytique. Aucune statistique d'utilisation, rapport de plantage ou donn&eacute;e comportementale n'est envoy&eacute;e au d&eacute;veloppeur.</p>
+            </div>
+
+            <div class="section">
+                <h3>7. Confidentialit&eacute; des enfants</h3>
+                <p>Voicloud ne s'adresse pas aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles aupr&egrave;s d'enfants de moins de 13 ans. Si vous pensez qu'un enfant nous a fourni des donn&eacute;es personnelles, veuillez nous contacter afin que nous puissions prendre les mesures appropri&eacute;es.</p>
+            </div>
+
+            <div class="section">
+                <h3>8. Modifications de cette politique</h3>
+                <p>Nous pouvons mettre &agrave; jour cette Politique de Confidentialit&eacute; de temps &agrave; autre. Tout changement sera refl&eacute;t&eacute; sur cette page avec une date d'entr&eacute;e en vigueur mise &agrave; jour. Nous vous encourageons &agrave; consulter cette politique p&eacute;riodiquement.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Nous contacter</h3>
+                <p>Si vous avez des questions concernant cette Politique de Confidentialit&eacute;, veuillez nous contacter &agrave; :<br>
+                <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
+            </div>
+        </section>
+
+        <!-- ==================== GERMAN ==================== -->
+        <section id="lang-de" class="lang-section">
+            <h2>Datenschutzerkl&auml;rung</h2>
+            <p class="effective-date">G&uuml;ltig ab: 30. M&auml;rz 2026</p>
+
+            <p>Diese Datenschutzerkl&auml;rung beschreibt, wie Voicloud (&bdquo;die App&ldquo;), entwickelt von Mon Software, mit Ihren Informationen umgeht. Wir verpflichten uns, Ihre Privatsph&auml;re zu sch&uuml;tzen und unsere Praktiken transparent zu gestalten.</p>
+
+            <div class="section">
+                <h3>1. Daten, die wir erheben</h3>
+                <p>Die App kann auf die folgenden Daten zugreifen, die alle auf Ihrem Ger&auml;t verbleiben, sofern Sie sich nicht ausdr&uuml;cklich f&uuml;r das Hochladen entscheiden:</p>
+                <ul>
+                    <li><strong>Audioaufnahmen</strong> &mdash; Von Ihnen erstellte Sprachaufnahmen werden lokal auf Ihrem Ger&auml;t gespeichert.</li>
+                    <li><strong>Standortdaten (optional)</strong> &mdash; Wenn Sie die Berechtigung erteilen, kann die App Aufnahmen mit Ihrem Standort versehen. Diese Daten werden lokal gespeichert und niemals an unsere Server &uuml;bermittelt.</li>
+                    <li><strong>Kalenderdaten (schreibgesch&uuml;tzt)</strong> &mdash; Wenn Sie die Berechtigung erteilen, liest die App Ihre Kalendereintr&auml;ge, um Dateinamen f&uuml;r Aufnahmen vorzuschlagen. Die App &auml;ndert oder speichert Ihre Kalenderdaten nicht.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>2. Cloud-Uploads</h3>
+                <p>Sie k&ouml;nnen Aufnahmen in Ihre eigenen Cloud-Speicher-Konten hochladen, darunter Google Drive, Dropbox, OneDrive, Box und iCloud. Diese Uploads werden ausschlie&szlig;lich von Ihnen initiiert und gehen direkt an Ihre pers&ouml;nlichen Konten. Wir haben keinen Zugriff auf Ihre Cloud-Speicher-Anmeldedaten oder hochgeladenen Dateien.</p>
+            </div>
+
+            <div class="section">
+                <h3>3. Keine Entwickler-Server</h3>
+                <p>Voicloud &uuml;bermittelt keine Ihrer pers&ouml;nlichen Daten, Aufnahmen oder Transkriptionen an Server, die dem Entwickler geh&ouml;ren oder von ihm betrieben werden. Die gesamte Verarbeitung erfolgt auf Ihrem Ger&auml;t oder innerhalb von Cloud-Diensten, die Sie ausdr&uuml;cklich autorisiert haben.</p>
+            </div>
+
+            <div class="section">
+                <h3>4. Transkription</h3>
+                <p>Die Sprache-zu-Text-Transkription wird vollst&auml;ndig auf Ihrem Ger&auml;t mit ger&auml;teinternen Engines (WhisperKit, Apple SpeechAnalyzer) durchgef&uuml;hrt. Zu Transkriptionszwecken werden keine Audiodaten an externe Server gesendet.</p>
+            </div>
+
+            <div class="section">
+                <h3>5. Werbung</h3>
+                <p>Die App verwendet Google AdMob zur Anzeige von Werbung. Google AdMob kann bestimmte Ger&auml;te- und Nutzungsdaten gem&auml;&szlig; der Datenschutzrichtlinie von Google erheben. Einzelheiten dar&uuml;ber, wie Google mit Ihren Daten umgeht, finden Sie unter: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google-Datenschutzerkl&auml;rung</a>.</p>
+            </div>
+
+            <div class="section">
+                <h3>6. Analysen</h3>
+                <p>Wir erheben keine Analysedaten. Es werden keine Nutzungsstatistiken, Absturzberichte oder Verhaltensdaten an den Entwickler gesendet.</p>
+            </div>
+
+            <div class="section">
+                <h3>7. Datenschutz f&uuml;r Kinder</h3>
+                <p>Voicloud richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren. Wenn Sie glauben, dass ein Kind uns personenbezogene Daten zur Verf&uuml;gung gestellt hat, kontaktieren Sie uns bitte, damit wir geeignete Ma&szlig;nahmen ergreifen k&ouml;nnen.</p>
+            </div>
+
+            <div class="section">
+                <h3>8. &Auml;nderungen dieser Richtlinie</h3>
+                <p>Wir k&ouml;nnen diese Datenschutzerkl&auml;rung von Zeit zu Zeit aktualisieren. &Auml;nderungen werden auf dieser Seite mit einem aktualisierten G&uuml;ltigkeitsdatum widergespiegelt. Wir empfehlen Ihnen, diese Richtlinie regelm&auml;&szlig;ig zu &uuml;berpr&uuml;fen.</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>Kontakt</h3>
+                <p>Wenn Sie Fragen zu dieser Datenschutzerkl&auml;rung haben, kontaktieren Sie uns bitte unter:<br>
+                <a href="mailto:monma1979@gmail.com">monma1979@gmail.com</a></p>
+            </div>
+        </section>
+
         <footer>
             &copy; 2026 Mon Software. All rights reserved.
         </footer>
     </div>
+
+    <script>
+        (function() {
+            var buttons = document.querySelectorAll('.lang-nav button');
+            var sections = document.querySelectorAll('.lang-section');
+
+            function switchLang(lang) {
+                sections.forEach(function(s) {
+                    s.classList.remove('active');
+                });
+                buttons.forEach(function(b) {
+                    b.classList.remove('active');
+                });
+                var target = document.getElementById('lang-' + lang);
+                if (target) {
+                    target.classList.add('active');
+                }
+                var btn = document.querySelector('.lang-nav button[data-lang="' + lang + '"]');
+                if (btn) {
+                    btn.classList.add('active');
+                }
+            }
+
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    switchLang(this.getAttribute('data-lang'));
+                });
+            });
+
+            // Auto-detect browser language
+            var supported = ['en', 'ja', 'zh-Hans', 'ko', 'es', 'fr', 'de'];
+            var browserLang = navigator.language || navigator.userLanguage || 'en';
+            var detected = 'en';
+
+            // Exact match first
+            if (supported.indexOf(browserLang) !== -1) {
+                detected = browserLang;
+            } else {
+                // Try base language code
+                var base = browserLang.split('-')[0];
+                if (base === 'zh') {
+                    // Map zh-CN, zh-SG etc. to zh-Hans; others stay en
+                    if (browserLang === 'zh-CN' || browserLang === 'zh-SG' || browserLang === 'zh-Hans') {
+                        detected = 'zh-Hans';
+                    }
+                } else if (supported.indexOf(base) !== -1) {
+                    detected = base;
+                }
+            }
+
+            switchLang(detected);
+        })();
+    </script>
 </body>
 </html>
