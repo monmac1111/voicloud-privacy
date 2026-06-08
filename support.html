@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voicloud — Support / お問い合わせ</title>
+    <meta name="description" content="Voicloud のサポート窓口。不具合報告、機能リクエスト、購入後のサポートを承ります。">
+    <style>
+        :root {
+            --accent:   #0075DE;
+            --recording:#DD5B00;
+            --diarizing:#2A9D99;
+            --summarizing:#6B3FA0;
+            --completed:#1AAE39;
+            --bg:       #EFEDE9;
+            --card:     #FFFFFF;
+            --text:     rgba(0,0,0,0.92);
+            --text-sec: #615D59;
+            --text-tert:#908A82;
+            --border:   rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+                         "Hiragino Kaku Gothic ProN", "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .stripe {
+            position: fixed; left: 0; right: 0; top: 0; height: 6px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--diarizing) 50%, var(--summarizing) 100%);
+            z-index: 100;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 24px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .back-link:hover { text-decoration: underline; }
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+        .tagline {
+            font-size: 16px;
+            color: var(--text-sec);
+            margin-bottom: 40px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 40px 0 16px;
+            letter-spacing: -0.3px;
+        }
+        h2 .lang-tag {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--text-tert);
+            margin-left: 10px;
+            vertical-align: middle;
+            text-transform: uppercase;
+        }
+        h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin: 24px 0 8px;
+            color: var(--text);
+        }
+        p { margin-bottom: 14px; font-size: 15px; color: var(--text); }
+        .secondary { color: var(--text-sec); }
+        .card {
+            background: var(--card);
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .card-accent {
+            background: linear-gradient(135deg, rgba(0,117,222,0.04), rgba(107,63,160,0.03));
+            border: 1px solid rgba(0,117,222,0.18);
+        }
+        .email-button {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 12px 22px;
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 4px 12px rgba(0,117,222,0.25);
+        }
+        .email-button:hover {
+            background: #005BAB;
+        }
+        ul { margin: 8px 0 16px 22px; }
+        ul li { margin-bottom: 6px; font-size: 15px; color: var(--text); }
+        strong { font-weight: 700; }
+        .faq-q {
+            font-weight: 700;
+            margin: 18px 0 6px;
+            color: var(--text);
+        }
+        .faq-a {
+            color: var(--text-sec);
+            font-size: 15px;
+        }
+        code {
+            font-family: ui-monospace, "SF Mono", Menlo, monospace;
+            background: rgba(0,0,0,0.05);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 48px 0;
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-tert);
+            font-size: 13px;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="stripe"></div>
+    <div class="container">
+        <a class="back-link" href="./">← Home</a>
+
+        <h1>Support</h1>
+        <p class="tagline">お問い合わせ・不具合報告・機能リクエスト</p>
+
+        <!-- ============================================================
+             日本語セクション
+             ============================================================ -->
+        <h2>日本語 <span class="lang-tag">JAPANESE</span></h2>
+
+        <div class="card card-accent">
+            <h3>📧 メールでお問い合わせ</h3>
+            <p>不具合報告、機能リクエスト、購入後のサポートはこちらまで。<br>
+               平日 1-3 営業日以内に返信します。</p>
+            <a class="email-button" href="mailto:voicloud-feedback@monsoftware.com?subject=Voicloud%20Mac%20%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%83%90%E3%83%83%E3%82%AF">
+                voicloud-feedback@monsoftware.com
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>💡 アプリ内からの送信が最も早いです</h3>
+            <p class="secondary">Voicloud を開いて <strong>Settings → 高度 → フィードバックを送る</strong> を
+               押すと、件名と本文に Voicloud バージョン + macOS バージョンが自動入力されて
+               メーラが開きます。デバッグに必要な環境情報が揃うので、初動が早くなります。</p>
+        </div>
+
+        <h3>よくある質問</h3>
+
+        <div class="card">
+            <div class="faq-q">Q. 録音が始まらない / マイク許可を求められない</div>
+            <div class="faq-a">A. macOS の <strong>システム設定 → プライバシーとセキュリティ → マイク</strong> を開き、
+                Voicloud にチェックが入っているか確認してください。一度チェックが外れていた場合は
+                Voicloud を再起動して再度マイクボタンを押すと許可ダイアログが表示されます。</div>
+
+            <div class="faq-q">Q. システム音声が録音できない (Zoom / Meet の相手の声が録れない)</div>
+            <div class="faq-a">A. Voicloud は macOS 14.2+ の Core Audio Process Tap (CATap) でシステム音声を取得
+                します。macOS のバージョンが 14.2 以上か確認してください。バージョンが古いと
+                マイク音声のみ録音され、システム音声タブが選択不可になります。</div>
+
+            <div class="faq-q">Q. 文字起こしモデル (Whisper) のダウンロードが終わらない</div>
+            <div class="faq-a">A. Whisper.cpp の large-v3-turbo モデルは約 547 MB あります。回線が遅い環境では
+                数分以上かかります。一度ダウンロードすれば次回以降は不要です。途中で失敗した場合は
+                <strong>Settings → 文字起こし → モデルを再ダウンロード</strong> から再試行してください。</div>
+
+            <div class="faq-q">Q. Gemini を使うと課金されますか?</div>
+            <div class="faq-a">A. はい。Gemini プリセットや AI 自動タイトルは <strong>あなた自身の Google AI Studio
+                API キー</strong> を使うため、Google から直接あなたに請求されます。Voicloud の開発者を経由
+                しません。コスト感の目安: 1 時間の会議で約 ¥30-80 (Gemini 2.5 Flash 使用時)。</div>
+
+            <div class="faq-q">Q. クラウドアップロードが失敗する</div>
+            <div class="faq-a">A. <strong>Settings → クラウド</strong> で対象サービスを一度「切断」して再接続してください。
+                OAuth トークンの有効期限が切れている場合があります。それでもダメな場合は、
+                ファイル名に特殊文字 (絵文字や記号) が含まれていないか確認を。</div>
+
+            <div class="faq-q">Q. 過去の録音は移行できますか?</div>
+            <div class="faq-a">A. iOS 版 Voicloud からの直接移行はまだ未対応です。音声ファイル (.m4a / .wav) を
+                Voicloud Mac の <strong>ライブラリにドロップ</strong> すると Import 機能で取り込めますが、
+                iOS で生成した文字起こし / 要約 / タグは引き継がれません。</div>
+
+            <div class="faq-q">Q. ライセンスを別の Mac に移したい</div>
+            <div class="faq-a">A. App Store の標準仕様で、同じ Apple ID なら別の Mac でも追加課金なしで使えます。
+                新しい Mac で App Store から Voicloud を再ダウンロードしてください。</div>
+
+            <div class="faq-q">Q. 返金を希望したい</div>
+            <div class="faq-a">A. Apple の標準プロセスで対応してください。<strong>reportaproblem.apple.com</strong> から
+                購入履歴を選んで返金リクエストを送信。通常は購入後 14 日以内であれば受理されます。
+                返金の決定は Apple が行います。</div>
+        </div>
+
+        <div class="card">
+            <h3>関連リンク</h3>
+            <p class="secondary">
+                <a href="privacy.html">プライバシーポリシー</a> ·
+                <a href="terms.html">利用規約 (英語)</a>
+            </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- ============================================================
+             English section
+             ============================================================ -->
+        <h2>English <span class="lang-tag">ENGLISH</span></h2>
+
+        <div class="card card-accent">
+            <h3>📧 Contact us by email</h3>
+            <p>Bug reports, feature requests, and post-purchase support.<br>
+               We respond within 1-3 business days.</p>
+            <a class="email-button" href="mailto:voicloud-feedback@monsoftware.com?subject=Voicloud%20Mac%20feedback">
+                voicloud-feedback@monsoftware.com
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>💡 Fastest path: in-app feedback</h3>
+            <p class="secondary">Open Voicloud and click <strong>Settings → 高度 (Advanced) → フィードバック (Feedback)</strong>.
+                Your mail client will open with the Voicloud version + macOS version pre-filled in
+                the subject and body — this makes debugging much faster.</p>
+        </div>
+
+        <h3>FAQ</h3>
+
+        <div class="card">
+            <div class="faq-q">Q. Recording doesn't start / I'm not asked for mic permission</div>
+            <div class="faq-a">A. Open <strong>System Settings → Privacy & Security → Microphone</strong> and
+                ensure Voicloud is checked. If the toggle is off, turn it on and restart Voicloud.</div>
+
+            <div class="faq-q">Q. System audio isn't being captured (Zoom / Meet remote side missing)</div>
+            <div class="faq-a">A. Voicloud uses Core Audio Process Tap (CATap), which requires <strong>macOS 14.2 or later</strong>.
+                If you are on an older macOS, only mic audio is recorded and the system audio source is disabled.</div>
+
+            <div class="faq-q">Q. The Whisper transcription model takes forever to download</div>
+            <div class="faq-a">A. The large-v3-turbo model is about 547 MB. On slow connections this can take
+                several minutes. It's a one-time download. If it fails, retry from
+                <strong>Settings → ローカル文字起こし (Local transcription) → モデルを再ダウンロード</strong>.</div>
+
+            <div class="faq-q">Q. Will using Gemini cost me money?</div>
+            <div class="faq-a">A. Yes. The Gemini preset and the AI auto-title feature use <strong>your own
+                Google AI Studio API key</strong>, and Google bills you directly. Voicloud is not in the
+                billing path. Rough cost: about ¥30-80 ($0.20-0.55) for one hour of meeting transcription
+                with Gemini 2.5 Flash.</div>
+
+            <div class="faq-q">Q. Cloud upload fails</div>
+            <div class="faq-a">A. Open <strong>Settings → クラウド (Cloud)</strong>, disconnect the service, and reconnect.
+                The OAuth token may have expired. If the issue persists, check the file name for
+                special characters (emoji or unusual symbols).</div>
+
+            <div class="faq-q">Q. Can I migrate from Voicloud iOS?</div>
+            <div class="faq-a">A. Direct migration from Voicloud iOS is not supported yet. You can drag audio files
+                (.m4a / .wav) into Voicloud Mac's library to import them via the Import feature, but
+                transcripts / summaries / tags generated on iOS won't be carried over.</div>
+
+            <div class="faq-q">Q. I want to move my license to another Mac</div>
+            <div class="faq-a">A. Standard App Store behavior — re-download Voicloud from the App Store on the new
+                Mac while signed in with the same Apple ID. No additional purchase needed.</div>
+
+            <div class="faq-q">Q. I want a refund</div>
+            <div class="faq-a">A. Apple handles refunds. Visit <strong>reportaproblem.apple.com</strong>, select the
+                purchase, and submit a refund request. Refunds are typically granted within 14 days of
+                purchase. The decision is Apple's.</div>
+        </div>
+
+        <div class="card">
+            <h3>Related</h3>
+            <p class="secondary">
+                <a href="privacy-en.html">Privacy Policy</a> ·
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+
+        <footer>
+            <p>© 2026 Mon Software · <a href="mailto:voicloud-feedback@monsoftware.com">voicloud-feedback@monsoftware.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>
