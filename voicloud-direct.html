@@ -1,174 +1,79 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Voicloud Direct — プライバシーポリシー</title>
-    <style>
-        :root {
-            --primary: #4A90D9;
-            --bg: #FAFBFC;
-            --card: #FFFFFF;
-            --text: #1D1D1F;
-            --text-secondary: #6E6E73;
-            --border: #E5E5EA;
-            --accent: #007AFF;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 48px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid var(--border);
-        }
-        .app-icon { font-size: 48px; margin-bottom: 12px; }
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 8px;
-        }
-        .subtitle {
-            color: var(--text-secondary);
-            font-size: 15px;
-        }
-        .lang-switch { font-size: 13px; margin-top: 14px; }
-        h2 {
-            font-size: 22px;
-            font-weight: 700;
-            margin: 40px 0 16px;
-            letter-spacing: -0.3px;
-        }
-        h3 {
-            font-size: 17px;
-            font-weight: 600;
-            margin: 28px 0 10px;
-            color: var(--text);
-        }
-        p {
-            margin-bottom: 14px;
-            font-size: 15px;
-            color: var(--text-secondary);
-        }
-        ul {
-            margin: 8px 0 16px 20px;
-            font-size: 15px;
-            color: var(--text-secondary);
-        }
-        ul li { margin-bottom: 6px; }
-        strong { color: var(--text); font-weight: 600; }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .effective-date {
-            color: var(--text-secondary);
-            font-size: 13px;
-            margin-bottom: 24px;
-        }
-        .section {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px;
-            border: 1px solid var(--border);
-        }
-        .contact-info {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 24px;
-            margin-top: 32px;
-            text-align: center;
-            border: 1px solid var(--border);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voicloud Direct — Privacy Policy</title>
+<style>
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:#1d1d1f;padding:24px 20px;max-width:720px;margin:0 auto;line-height:1.6}
+a{color:#007AFF;text-decoration:none}
+a:hover{text-decoration:underline}
+.lang-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:32px}
+.lang-btn{padding:4px 11px;border:1.5px solid #d1d1d6;border-radius:14px;cursor:pointer;font-size:13px;background:none;color:#636366;font-family:inherit;transition:all .15s}
+.lang-btn:hover{border-color:#007AFF;color:#007AFF}
+.lang-btn.active{background:#007AFF;border-color:#007AFF;color:#fff}
+.page-header{margin-bottom:32px}
+h1{font-size:26px;font-weight:700;margin-bottom:6px;line-height:1.2}
+.subtitle{color:#8e8e93;font-size:14px}
+h3{font-size:16px;font-weight:600;margin-top:28px;margin-bottom:8px;color:#1d1d1f}
+p{margin-bottom:12px;color:#3d3d3f;font-size:15px}
+ul{padding-left:20px;margin-bottom:12px}
+li{color:#3d3d3f;font-size:15px;margin-bottom:4px;line-height:1.6}
+.contact-box{background:#f5f5f7;border-radius:12px;padding:20px 24px;margin-top:40px}
+.contact-box h3{margin-top:0}
+.footer{margin-top:40px;padding-top:20px;border-top:1px solid #e5e5ea;font-size:13px;color:#8e8e93}
+
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="app-icon">🎙️</div>
-            <h1>Voicloud Direct</h1>
-            <div class="subtitle">プライバシーポリシー</div>
-            <div class="lang-switch"><a href="voicloud-direct-en.html">English</a></div>
-        </header>
+<div class="lang-bar" id="lang-bar"></div>
+<div id="content"></div>
+<script>
+(function() {
+  var LANGS = ["ja", "en", "de", "es", "fr", "ko", "zh-Hans"];
+  var LABELS = {"ja": "日本語", "en": "English", "de": "Deutsch", "es": "Español", "fr": "Français", "ko": "한국어", "zh-Hans": "中文"};
+  var i18n = {
+    "ja": {"title": "Voicloud Direct — プライバシーポリシー", "heading": "プライバシーポリシー", "effectiveDate": "施行日: 2026年6月10日", "intro": "<p>本ポリシーは、Mon Software が開発・提供する iOS アプリ「Voicloud Direct」(以下「本アプリ」) における情報の取り扱いについて説明するものです。私たちはお客様のプライバシーを保護し、すべての処理を透明かつ最小限のデータ収集で行うことをお約束します。</p>", "sections": "<h3>1. 収集するデータ</h3>\n<p>本アプリは以下のデータにアクセスします。これらはすべてお客様の iPhone 上にローカル保存され、お客様が明示的にアップロード・送信を選択しない限り、外部に送信されることはありません。</p>\n<ul><li>音声録音: マイクで録音された音声ファイルは、お客様の iPhone 内にローカル保存されます。</li><li>文字起こし結果・要約: 本アプリが生成・取得したテキストは、端末内のローカルストア (SwiftData) に保存されます。</li><li>位置情報 (任意): 録音時の場所をメタデータとして残す機能を ON にした場合のみ取得します。録音ファイルに付随して端末内に保存され、開発者には送信されません。いつでも OFF にできます。</li></ul>\n<h3>2. 必要な OS 権限</h3>\n<ul><li>マイク: 音声を録音するために必要です。</li><li>位置情報 (任意): 録音場所をメタデータとして残す場合のみ使用します。</li><li>カレンダー (任意): カレンダーの予定からファイル名を自動生成する機能を使う場合のみ使用します。予定の情報は端末内でのファイル名生成にのみ使われ、外部には送信されません。</li></ul>\n<h3>3. クラウドアップロード (任意)</h3>\n<p>お客様はご自身の iCloud Drive / Google Drive / Dropbox / OneDrive / Box アカウントに録音をアップロードできます。これらのアップロードはお客様ご自身のアカウントに直接保存され、開発者のサーバーを経由しません。OAuth 認証情報・トークンはお客様の端末の Keychain にのみ保存されます。</p>\n<h3>4. AI 機能 (文字起こし・要約 / BYOK)</h3>\n<p>本アプリの文字起こし・要約は「BYOK (Bring Your Own Key)」方式です。これらは任意機能であり、利用するにはお客様ご自身が取得した AI プロバイダの API キーを設定する必要があります。対応プロバイダは OpenAI、Google Gemini (Google AI Studio)、Google Vertex AI です。</p>\n<p>音声・テキストの送信は、お客様が API キーを設定し、文字起こし・要約を実行したときのみ発生します。このとき、対象の録音音声またはそのテキストが、お客様の端末から、お客様が選択したプロバイダ (OpenAI または Google) の API へ直接送信されます。送信はお客様ご自身の API キーで認証され、Voicloud Direct がデータを中継することはありません。送信先プロバイダにおける課金・データの取り扱いは、各プロバイダの規約・プライバシーポリシーに従います。</p>\n<p>API キーを設定しない場合、音声・テキストはいかなる AI サービスにも送信されません。録音・再生・共有シートでの書き出しといった主要機能は、API キーなしで動作します。</p>\n<p>API キーはお客様の端末の Keychain に暗号化して保存され、開発者がアクセスすることはできません。</p>\n<h3>5. 開発者サーバーへの送信なし</h3>\n<p>Voicloud Direct は、お客様の音声・文字起こし・要約・API キーを、開発者が所有または運営するサーバーに送信することはありません（そもそも当社は AI 推論サーバーを保有していません）。すべての処理はお客様の端末上、お客様が明示的に接続したクラウドサービス内、またはお客様が API キーを設定したうえで明示的に実行した AI サービス (opt-in) でのみ行われます。</p>\n<h3>6. アナリティクス・トラッキング</h3>\n<p>本アプリはアナリティクス SDK (Google Analytics、Firebase、Sentry 等) を一切使用していません。ユーザーの行動データ・使用統計を収集することも、トラッキングを行うこともありません。</p>\n<h3>7. 広告</h3>\n<p>本アプリは広告を表示しません。買い切り型のアプリで、広告 SDK を一切組み込んでいません。</p>\n<h3>8. お子様のプライバシー</h3>\n<p>Voicloud Direct は 13 歳未満のお子様を対象としたアプリではありません。当社は 13 歳未満のお子様から故意に個人情報を収集することはありません。</p>\n<h3>9. ポリシーの変更</h3>\n<p>本プライバシーポリシーは随時更新されることがあります。変更があった場合は、施行日を更新した上で本ページに反映されます。</p>\n", "contact": "<div class=\"contact-box\"><h3>お問い合わせ</h3><p>本プライバシーポリシーに関するご質問は、以下までご連絡ください。</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "en": {"title": "Voicloud Direct — Privacy Policy", "heading": "Privacy Policy", "effectiveDate": "Effective: June 10, 2026", "intro": "<p>This policy explains how Mon Software handles information in the iOS app &quot;Voicloud Direct&quot; (the &quot;App&quot;). We are committed to protecting your privacy and performing all processing transparently with minimal data collection.</p>", "sections": "<h3>1. Data We Access</h3>\n<p>The App accesses the following data. All of it is stored locally on your iPhone and is never transmitted externally unless you explicitly choose to upload or send it.</p>\n<ul><li>Audio recordings: Audio files recorded via the microphone are stored locally on your iPhone.</li><li>Transcription results and summaries: Text generated or retrieved by the App is stored in a local on-device store (SwiftData).</li><li>Location (optional): Collected only when you enable the feature to save recording location as metadata. Stored on-device alongside the recording file; never sent to the developer. Can be turned off at any time.</li></ul>\n<h3>2. Required OS Permissions</h3>\n<ul><li>Microphone: Required to record audio.</li><li>Location (optional): Used only when you choose to save recording location as metadata.</li><li>Calendar (optional): Used only when you enable auto-filename generation from calendar events. Event data is used solely to generate filenames on-device and is never sent externally.</li></ul>\n<h3>3. Cloud Upload (Optional)</h3>\n<p>You can upload recordings to your own iCloud Drive / Google Drive / Dropbox / OneDrive / Box account. These uploads go directly to your account and never pass through the developer's servers. OAuth credentials and tokens are stored only in your device's Keychain.</p>\n<h3>4. AI Features (Transcription &amp; Summary / BYOK)</h3>\n<p>Transcription and summarization in this App use a &quot;Bring Your Own Key (BYOK)&quot; model. These are optional features that require you to configure an API key from an AI provider of your choice. Supported providers: OpenAI, Google Gemini (Google AI Studio), Google Vertex AI.</p>\n<p>Audio or text is sent to an AI service only when you have configured an API key and explicitly trigger transcription or summarization. At that point, the recording audio or its transcript is sent directly from your device to the API of the provider you selected (OpenAI or Google), authenticated with your own API key. Voicloud Direct does not relay the data. Billing and data handling at the destination provider are governed by that provider's terms and privacy policy.</p>\n<p>If you do not configure an API key, no audio or text is sent to any AI service. Core features — recording, playback, and exporting via the Share Sheet — work without an API key.</p>\n<p>Your API key is encrypted and stored in your device's Keychain. The developer has no access to it.</p>\n<h3>5. No Developer Server Transmission</h3>\n<p>Voicloud Direct never sends your audio, transcripts, summaries, or API keys to any server owned or operated by the developer (we do not operate AI inference servers). All processing occurs on your device, within the cloud services you have explicitly connected, or within AI services you have opted into by configuring an API key.</p>\n<h3>6. Analytics &amp; Tracking</h3>\n<p>The App does not use any analytics SDK (Google Analytics, Firebase, Sentry, etc.). We do not collect behavioral data, usage statistics, or perform any tracking.</p>\n<h3>7. Advertising</h3>\n<p>The App displays no advertisements. It is a one-time-purchase app with no advertising SDK.</p>\n<h3>8. Children's Privacy</h3>\n<p>Voicloud Direct is not directed at children under 13. We do not knowingly collect personal information from children under 13.</p>\n<h3>9. Changes to This Policy</h3>\n<p>This Privacy Policy may be updated from time to time. When changes occur, the effective date will be updated and the new version will be reflected on this page.</p>\n", "contact": "<div class=\"contact-box\"><h3>Contact</h3><p>For questions about this Privacy Policy, please contact us at:</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "de": {"title": "Voicloud Direct — Datenschutzerklärung", "heading": "Datenschutzerklärung", "effectiveDate": "Gültig ab: 10. Juni 2026", "intro": "<p>Diese Richtlinie erläutert, wie Mon Software Informationen in der iOS-App „Voicloud Direct“ (im Folgenden „die App“) verarbeitet. Wir verpflichten uns, Ihre Privatsphäre zu schützen und alle Verarbeitungen transparent sowie mit minimaler Datenerhebung durchzuführen.</p>", "sections": "<h3>1. Erfasste Daten</h3>\n<p>Die App greift auf folgende Daten zu. Alle Daten werden lokal auf Ihrem iPhone gespeichert und nur dann extern übertragen, wenn Sie dies ausdrücklich veranlassen.</p>\n<ul><li>Audioaufnahmen: Über das Mikrofon aufgezeichnete Audiodateien werden lokal auf Ihrem iPhone gespeichert.</li><li>Transkriptionsergebnisse und Zusammenfassungen: Von der App generierter oder abgerufener Text wird im lokalen Gerätespeicher (SwiftData) abgelegt.</li><li>Standort (optional): Wird nur erfasst, wenn Sie die Funktion zur Speicherung des Aufnahmeorts als Metadaten aktivieren. Die Daten werden geräteseitig gespeichert und nie an den Entwickler übertragen. Die Funktion kann jederzeit deaktiviert werden.</li></ul>\n<h3>2. Erforderliche Systemberechtigungen</h3>\n<ul><li>Mikrofon: Zur Aufzeichnung von Audio erforderlich.</li><li>Standort (optional): Nur genutzt, wenn Sie den Aufnahmeort als Metadaten speichern möchten.</li><li>Kalender (optional): Nur genutzt, wenn Sie die automatische Dateinamen-Generierung aus Kalenderterminen aktivieren. Termindaten werden ausschließlich zur geräteseitigen Dateinamen-Generierung verwendet und nie extern übertragen.</li></ul>\n<h3>3. Cloud-Upload (optional)</h3>\n<p>Sie können Aufnahmen in Ihr eigenes iCloud Drive / Google Drive / Dropbox / OneDrive / Box-Konto hochladen. Diese Uploads werden direkt in Ihrem Konto gespeichert und durchlaufen nie die Server des Entwicklers. OAuth-Anmeldedaten und Tokens werden ausschließlich in der Keychain Ihres Geräts gespeichert.</p>\n<h3>4. KI-Funktionen (Transkription &amp; Zusammenfassung / BYOK)</h3>\n<p>Transkription und Zusammenfassung in dieser App basieren auf dem „Bring Your Own Key (BYOK)“-Modell. Diese optionalen Funktionen erfordern einen API-Schlüssel eines KI-Anbieters Ihrer Wahl. Unterstützte Anbieter: OpenAI, Google Gemini (Google AI Studio), Google Vertex AI.</p>\n<p>Audio oder Text wird nur dann an einen KI-Dienst gesendet, wenn Sie einen API-Schlüssel konfiguriert haben und die Transkription oder Zusammenfassung explizit auslösen. In diesem Fall werden die Aufnahme oder das Transkript direkt von Ihrem Gerät an den von Ihnen gewählten Anbieter (OpenAI oder Google) gesendet – authentifiziert mit Ihrem eigenen API-Schlüssel. Voicloud Direct leitet keine Daten weiter. Abrechnung und Datenverarbeitung beim Zielanbieter unterliegen dessen Nutzungsbedingungen.</p>\n<p>Ohne konfigurierten API-Schlüssel werden keine Daten an KI-Dienste gesendet. Kernfunktionen wie Aufnahme, Wiedergabe und Export funktionieren ohne API-Schlüssel.</p>\n<p>Ihr API-Schlüssel wird verschlüsselt in der Keychain Ihres Geräts gespeichert. Der Entwickler hat keinen Zugriff darauf.</p>\n<h3>5. Keine Übertragung an Entwickler-Server</h3>\n<p>Voicloud Direct sendet Ihre Audio-, Transkriptions-, Zusammenfassungs- oder API-Schlüsseldaten nie an Server des Entwicklers (wir betreiben keine KI-Inferenzserver). Die gesamte Verarbeitung erfolgt auf Ihrem Gerät, in den von Ihnen verbundenen Cloud-Diensten oder in KI-Diensten, für die Sie sich durch Konfiguration eines API-Schlüssels angemeldet haben.</p>\n<h3>6. Analyse &amp; Tracking</h3>\n<p>Die App verwendet keinerlei Analyse-SDKs (Google Analytics, Firebase, Sentry usw.). Wir erfassen keine Verhaltensdaten oder Nutzungsstatistiken und führen kein Tracking durch.</p>\n<h3>7. Werbung</h3>\n<p>Die App zeigt keine Werbung an. Es handelt sich um eine Einmalkauf-App ohne integriertes Werbe-SDK.</p>\n<h3>8. Datenschutz für Kinder</h3>\n<p>Voicloud Direct richtet sich nicht an Kinder unter 13 Jahren. Wir erheben wissentlich keine personenbezogenen Daten von Kindern unter 13 Jahren.</p>\n<h3>9. Änderungen dieser Richtlinie</h3>\n<p>Diese Datenschutzerklärung kann von Zeit zu Zeit aktualisiert werden. Bei Änderungen wird das Gültigkeitsdatum aktualisiert und die neue Version auf dieser Seite veröffentlicht.</p>\n", "contact": "<div class=\"contact-box\"><h3>Kontakt</h3><p>Bei Fragen zu dieser Datenschutzerklärung kontaktieren Sie uns bitte unter:</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "es": {"title": "Voicloud Direct — Política de Privacidad", "heading": "Política de Privacidad", "effectiveDate": "Fecha de entrada en vigor: 10 de junio de 2026", "intro": "<p>Esta política describe cómo se gestiona la información en la aplicación iOS «Voicloud Direct» (en adelante, «la Aplicación»), desarrollada y distribuida por Mon Software. Nos comprometemos a proteger su privacidad y a llevar a cabo todos los procesos de forma transparente y con una recopilación mínima de datos.</p>", "sections": "<h3>1. Datos recopilados</h3>\n<p>La Aplicación accede a los siguientes datos. Todos ellos se almacenan de forma local en su iPhone y no se transmiten al exterior a menos que usted elija explícitamente cargarlos o enviarlos.</p>\n<ul><li>Grabaciones de voz: los archivos de audio grabados con el micrófono se almacenan localmente en su iPhone.</li><li>Transcripciones y resúmenes: el texto generado u obtenido por la Aplicación se guarda en el almacén local del dispositivo (SwiftData).</li><li>Ubicación (opcional): se obtiene únicamente si activa la función que registra el lugar de grabación como metadato. Se guarda en el dispositivo junto al archivo de grabación y no se envía al desarrollador. Puede desactivarla en cualquier momento.</li></ul>\n<h3>2. Permisos de sistema necesarios</h3>\n<ul><li>Micrófono: necesario para grabar audio.</li><li>Ubicación (opcional): se utiliza solo cuando desea conservar el lugar de grabación como metadato.</li><li>Calendario (opcional): se utiliza solo cuando emplea la función de generación automática de nombres de archivo a partir de eventos del calendario. La información de los eventos se usa únicamente para generar el nombre del archivo en el dispositivo y no se transmite al exterior.</li></ul>\n<h3>3. Carga en la nube (opcional)</h3>\n<p>Puede cargar sus grabaciones en su propia cuenta de iCloud Drive, Google Drive, Dropbox, OneDrive o Box. Estas cargas se guardan directamente en su cuenta y no pasan por los servidores del desarrollador. Las credenciales de autenticación OAuth y los tokens se almacenan únicamente en el Keychain de su dispositivo.</p>\n<h3>4. Funciones de IA (transcripción y resumen / BYOK)</h3>\n<p>La transcripción y el resumen de la Aplicación funcionan bajo el esquema «BYOK (Bring Your Own Key)». Estas son funciones opcionales y, para utilizarlas, debe configurar una clave API obtenida por usted mismo del proveedor de IA correspondiente. Los proveedores compatibles son OpenAI, Google Gemini (Google AI Studio) y Google Vertex AI.</p>\n<p>El envío de audio o texto ocurre únicamente cuando usted configura una clave API y ejecuta la transcripción o el resumen. En ese momento, el audio de la grabación seleccionada o su texto se envía directamente desde su dispositivo a la API del proveedor que usted haya elegido (OpenAI o Google). El envío se autentica con su propia clave API y Voicloud Direct no actúa como intermediario de los datos. La facturación y el tratamiento de datos en el proveedor de destino se rigen por los términos y la política de privacidad de dicho proveedor.</p>\n<p>Si no configura una clave API, el audio ni el texto se enviarán a ningún servicio de IA. Las funciones principales —grabación, reproducción y exportación mediante la hoja de compartir— funcionan sin necesidad de clave API.</p>\n<p>Las claves API se almacenan cifradas en el Keychain de su dispositivo y el desarrollador no puede acceder a ellas.</p>\n<h3>5. Sin transmisión a servidores del desarrollador</h3>\n<p>Voicloud Direct no transmite su audio, transcripciones, resúmenes ni claves API a servidores propiedad del desarrollador ni operados por él (además, no disponemos de servidores de inferencia de IA). Todo el procesamiento tiene lugar en su dispositivo, dentro de los servicios en la nube a los que usted se haya conectado de forma explícita, o en los servicios de IA a los que usted haya optado voluntariamente configurando una clave API (opt-in).</p>\n<h3>6. Analítica y seguimiento</h3>\n<p>La Aplicación no utiliza ningún SDK de analítica (Google Analytics, Firebase, Sentry, etc.). No se recopilan datos de comportamiento de usuario ni estadísticas de uso, ni se realiza ningún tipo de seguimiento.</p>\n<h3>7. Publicidad</h3>\n<p>La Aplicación no muestra publicidad. Es una aplicación de pago único y no incorpora ningún SDK publicitario.</p>\n<h3>8. Privacidad de los menores</h3>\n<p>Voicloud Direct no está destinada a menores de 13 años. No recopilamos intencionadamente información personal de menores de 13 años.</p>\n<h3>9. Cambios en la política</h3>\n<p>Esta Política de Privacidad puede actualizarse en cualquier momento. Cuando se realicen cambios, la fecha de entrada en vigor se actualizará y quedará reflejada en esta página.</p>\n", "contact": "<div class=\"contact-box\"><h3>Contacto</h3><p>Si tiene alguna pregunta sobre esta Política de Privacidad, póngase en contacto con nosotros a través de:</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "fr": {"title": "Voicloud Direct — Politique de confidentialité", "heading": "Politique de confidentialité", "effectiveDate": "Date d'entrée en vigueur : 10 juin 2026", "intro": "<p>La présente politique décrit la manière dont Mon Software traite les informations dans l'application iOS « Voicloud Direct » (ci-après « l'application »). Nous nous engageons à protéger votre vie privée et à garantir que tout traitement s'effectue de manière transparente, avec une collecte de données minimale.</p>", "sections": "<h3>1. Données collectées</h3>\n<p>L'application accède aux données suivantes. Toutes sont stockées localement sur votre iPhone et ne sont jamais transmises à l'extérieur, sauf si vous choisissez explicitement de les téléverser ou de les envoyer.</p>\n<ul><li>Enregistrements audio : les fichiers audio enregistrés via le microphone sont stockés localement sur votre iPhone.</li><li>Résultats de transcription et résumés : les textes générés ou obtenus par l'application sont enregistrés dans le stockage local de l'appareil (SwiftData).</li><li>Localisation (facultatif) : collectée uniquement si vous activez la fonction permettant de conserver l'emplacement de l'enregistrement en tant que métadonnée. Ces données sont sauvegardées sur l'appareil en tant qu'information associée au fichier d'enregistrement et ne sont pas transmises au développeur. Vous pouvez désactiver cette option à tout moment.</li></ul>\n<h3>2. Autorisations système requises</h3>\n<ul><li>Microphone : nécessaire pour enregistrer des fichiers audio.</li><li>Localisation (facultatif) : utilisée uniquement si vous souhaitez conserver l'emplacement de l'enregistrement en tant que métadonnée.</li><li>Calendrier (facultatif) : utilisé uniquement si vous souhaitez générer automatiquement des noms de fichiers à partir des événements de votre calendrier. Les informations relatives aux événements sont utilisées exclusivement pour la génération du nom de fichier sur l'appareil et ne sont jamais transmises à l'extérieur.</li></ul>\n<h3>3. Téléversement vers le cloud (facultatif)</h3>\n<p>Vous pouvez téléverser vos enregistrements vers votre propre compte iCloud Drive / Google Drive / Dropbox / OneDrive / Box. Ces téléversements sont directement enregistrés dans votre compte et ne transitent pas par les serveurs du développeur. Les informations d'authentification OAuth et les jetons d'accès sont stockés uniquement dans le Keychain de votre appareil.</p>\n<h3>4. Fonctionnalités IA (transcription et résumé / BYOK)</h3>\n<p>La transcription et la synthèse proposées par l'application reposent sur le principe BYOK (Bring Your Own Key). Ces fonctionnalités sont facultatives et nécessitent que vous configuriez une clé API obtenue auprès de votre propre fournisseur d'IA. Les fournisseurs pris en charge sont OpenAI, Google Gemini (Google AI Studio) et Google Vertex AI.</p>\n<p>L'envoi de données audio ou textuelles n'a lieu que lorsque vous avez configuré une clé API et lancé une transcription ou une synthèse. Dans ce cas, l'enregistrement audio concerné ou son texte est transmis directement depuis votre appareil vers l'API du fournisseur que vous avez sélectionné (OpenAI ou Google). La transmission est authentifiée par votre propre clé API ; Voicloud Direct ne relaie à aucun moment vos données. La facturation et le traitement des données par le fournisseur destinataire sont régis par les conditions générales et la politique de confidentialité de ce dernier.</p>\n<p>Si vous ne configurez pas de clé API, aucune donnée audio ou textuelle n'est envoyée à un service d'IA quelconque. Les fonctionnalités principales — enregistrement, lecture et export via la feuille de partage — fonctionnent sans clé API.</p>\n<p>La clé API est stockée de manière chiffrée dans le Keychain de votre appareil et le développeur n'y a pas accès.</p>\n<h3>5. Aucune transmission vers les serveurs du développeur</h3>\n<p>Voicloud Direct ne transmet jamais vos données audio, transcriptions, résumés ni clés API à des serveurs détenus ou exploités par le développeur (nous ne disposons d'ailleurs d'aucun serveur d'inférence IA). Tous les traitements s'effectuent exclusivement sur votre appareil, au sein des services cloud auxquels vous vous êtes explicitement connecté, ou via les services d'IA auxquels vous avez délibérément accédé en configurant une clé API (opt-in).</p>\n<h3>6. Analyse et suivi</h3>\n<p>L'application n'intègre aucun SDK d'analyse (Google Analytics, Firebase, Sentry, etc.). Aucune donnée de comportement utilisateur ni statistique d'utilisation n'est collectée, et aucun suivi n'est effectué.</p>\n<h3>7. Publicité</h3>\n<p>L'application n'affiche aucune publicité. Il s'agit d'une application à achat unique et aucun SDK publicitaire n'y est intégré.</p>\n<h3>8. Confidentialité des enfants</h3>\n<p>Voicloud Direct n'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment d'informations personnelles auprès d'enfants de moins de 13 ans.</p>\n<h3>9. Modifications de la politique</h3>\n<p>La présente politique de confidentialité est susceptible d'être mise à jour à tout moment. En cas de modification, la date d'entrée en vigueur sera actualisée et les changements seront reflétés sur cette page.</p>\n", "contact": "<div class=\"contact-box\"><h3>Nous contacter</h3><p>Pour toute question relative à la présente politique de confidentialité, veuillez nous contacter à l'adresse suivante.</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "ko": {"title": "Voicloud Direct — 개인정보 처리방침", "heading": "개인정보 처리방침", "effectiveDate": "시행일: 2026년 6월 10일", "intro": "<p>본 방침은 Mon Software가 개발·제공하는 iOS 앱 「Voicloud Direct」(이하 「본 앱」)에서의 정보 취급에 대해 설명합니다. 저희는 고객님의 개인정보를 보호하고, 모든 처리를 투명하고 최소한의 데이터 수집으로 수행할 것을 약속드립니다.</p>", "sections": "<h3>1. 수집하는 데이터</h3>\n<p>본 앱은 아래의 데이터에 접근합니다. 이 데이터는 모두 고객님의 iPhone에 로컬로 저장되며, 고객님이 명시적으로 업로드·전송을 선택하지 않는 한 외부로 전송되지 않습니다.</p>\n<ul><li>음성 녹음: 마이크로 녹음된 음성 파일은 고객님의 iPhone 내에 로컬로 저장됩니다.</li><li>받아쓰기 결과·요약: 본 앱이 생성·취득한 텍스트는 단말기 내의 로컬 저장소(SwiftData)에 보관됩니다.</li><li>위치 정보(선택): 녹음 시 장소를 메타데이터로 기록하는 기능을 켠 경우에만 취득합니다. 녹음 파일에 부수하여 단말기 내에 저장되며, 개발자에게는 전송되지 않습니다. 언제든지 끌 수 있습니다.</li></ul>\n<h3>2. 필요한 OS 권한</h3>\n<ul><li>마이크: 음성을 녹음하기 위해 필요합니다.</li><li>위치 정보(선택): 녹음 장소를 메타데이터로 기록하는 경우에만 사용합니다.</li><li>캘린더(선택): 캘린더 일정에서 파일명을 자동 생성하는 기능을 사용하는 경우에만 사용합니다. 일정 정보는 단말기 내 파일명 생성에만 사용되며, 외부로는 전송되지 않습니다.</li></ul>\n<h3>3. 클라우드 업로드(선택)</h3>\n<p>고객님은 본인의 iCloud Drive / Google Drive / Dropbox / OneDrive / Box 계정에 녹음을 업로드하실 수 있습니다. 이러한 업로드는 고객님 본인의 계정에 직접 저장되며, 개발자 서버를 경유하지 않습니다. OAuth 인증 정보·토큰은 고객님 단말기의 Keychain에만 저장됩니다.</p>\n<h3>4. AI 기능(받아쓰기·요약 / BYOK)</h3>\n<p>본 앱의 받아쓰기·요약은 「BYOK(Bring Your Own Key)」 방식입니다. 이는 선택 기능이며, 사용하시려면 고객님 본인이 취득한 AI 프로바이더의 API 키를 설정하셔야 합니다. 지원 프로바이더는 OpenAI, Google Gemini(Google AI Studio), Google Vertex AI입니다.</p>\n<p>음성·텍스트의 전송은 고객님이 API 키를 설정하고 받아쓰기·요약을 실행하였을 때에만 발생합니다. 이때 대상 녹음 음성 또는 그 텍스트가 고객님의 단말기에서 고객님이 선택한 프로바이더(OpenAI 또는 Google)의 API로 직접 전송됩니다. 전송은 고객님 본인의 API 키로 인증되며, Voicloud Direct가 데이터를 중계하는 일은 없습니다. 전송 대상 프로바이더에서의 과금·데이터 취급은 각 프로바이더의 이용약관·개인정보 처리방침을 따릅니다.</p>\n<p>API 키를 설정하지 않은 경우, 음성·텍스트는 어떠한 AI 서비스에도 전송되지 않습니다. 녹음·재생·공유 시트를 통한 내보내기 등 주요 기능은 API 키 없이도 동작합니다.</p>\n<p>API 키는 고객님의 단말기 Keychain에 암호화하여 저장되며, 개발자가 접근하는 것은 불가능합니다.</p>\n<h3>5. 개발자 서버로의 전송 없음</h3>\n<p>Voicloud Direct는 고객님의 음성·받아쓰기·요약·API 키를 개발자가 소유하거나 운영하는 서버로 전송하지 않습니다(당사는 AI 추론 서버를 보유하고 있지 않습니다). 모든 처리는 고객님의 단말기 상, 고객님이 명시적으로 연결한 클라우드 서비스 내, 또는 고객님이 API 키를 설정한 후 명시적으로 실행한 AI 서비스(opt-in)에서만 이루어집니다.</p>\n<h3>6. 애널리틱스·트래킹</h3>\n<p>본 앱은 애널리틱스 SDK(Google Analytics, Firebase, Sentry 등)를 일절 사용하지 않습니다. 사용자의 행동 데이터·이용 통계를 수집하거나 트래킹을 수행하는 일도 없습니다.</p>\n<h3>7. 광고</h3>\n<p>본 앱은 광고를 표시하지 않습니다. 완전 구매형 앱으로, 광고 SDK를 일절 포함하고 있지 않습니다.</p>\n<h3>8. 아동의 개인정보</h3>\n<p>Voicloud Direct는 13세 미만의 아동을 대상으로 한 앱이 아닙니다. 당사는 13세 미만의 아동으로부터 고의로 개인정보를 수집하지 않습니다.</p>\n<h3>9. 방침의 변경</h3>\n<p>본 개인정보 처리방침은 수시로 업데이트될 수 있습니다. 변경이 있는 경우에는 시행일을 갱신한 후 본 페이지에 반영됩니다.</p>\n", "contact": "<div class=\"contact-box\"><h3>문의</h3><p>본 개인정보 처리방침에 관한 문의는 아래로 연락하여 주시기 바랍니다.</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"},
+    "zh-Hans": {"title": "Voicloud Direct — 隐私政策", "heading": "隐私政策", "effectiveDate": "生效日期：2026年6月10日", "intro": "<p>本政策说明 Mon Software 开发并提供的 iOS 应用「Voicloud Direct」（以下简称「本应用」）对信息的处理方式。我们承诺保护您的隐私，并以透明且最小化数据收集的方式进行所有处理。</p>", "sections": "<h3>1. 收集的数据</h3>\n<p>本应用访问以下数据。这些数据均在您的 iPhone 上本地存储，除非您明确选择上传或发送，否则不会传输至外部。</p>\n<ul><li>语音录音：通过麦克风录制的音频文件本地保存在您的 iPhone 中。</li><li>转录结果及摘要：本应用生成或获取的文本保存在设备本地存储（SwiftData）中。</li><li>位置信息（可选）：仅在您开启将录音地点作为元数据保留的功能时获取。该信息随录音文件一同保存在设备中，不会发送给开发者。您可随时关闭此功能。</li></ul>\n<h3>2. 所需系统权限</h3>\n<ul><li>麦克风：录制音频所必需。</li><li>位置信息（可选）：仅在将录音地点作为元数据保留时使用。</li><li>日历（可选）：仅在使用从日历事件自动生成文件名的功能时使用。事件信息仅用于在设备内生成文件名，不会发送至外部。</li></ul>\n<h3>3. 云端上传（可选）</h3>\n<p>您可以将录音上传至您自己的 iCloud Drive / Google Drive / Dropbox / OneDrive / Box 账户。这些上传内容直接保存至您本人的账户，不经过开发者服务器。OAuth 认证信息及令牌仅保存在您设备的 Keychain 中。</p>\n<h3>4. AI 功能（转录·摘要 / BYOK）</h3>\n<p>本应用的转录及摘要功能采用「BYOK（Bring Your Own Key）」方式。这些均为可选功能，使用时需要您自行获取并配置 AI 服务商的 API 密钥。支持的服务商包括 OpenAI、Google Gemini（Google AI Studio）和 Google Vertex AI。</p>\n<p>音频及文本的发送仅在您配置了 API 密钥并执行转录或摘要时发生。此时，相关录音音频或其文本将从您的设备直接发送至您所选服务商（OpenAI 或 Google）的 API。发送使用您本人的 API 密钥进行认证，Voicloud Direct 不会中转您的数据。目标服务商的计费及数据处理方式遵循各服务商的条款及隐私政策。</p>\n<p>若未配置 API 密钥，音频及文本不会发送至任何 AI 服务。录音、播放、通过分享表单导出等核心功能无需 API 密钥即可使用。</p>\n<p>API 密钥以加密方式保存在您设备的 Keychain 中，开发者无法访问。</p>\n<h3>5. 不向开发者服务器发送数据</h3>\n<p>Voicloud Direct 不会将您的音频、转录内容、摘要或 API 密钥发送至开发者拥有或运营的服务器（本公司本身也不持有 AI 推理服务器）。所有处理仅在您的设备上、您明确连接的云服务中，或在您配置 API 密钥后明确执行的 AI 服务（opt-in）中进行。</p>\n<h3>6. 数据分析与追踪</h3>\n<p>本应用不使用任何数据分析 SDK（Google Analytics、Firebase、Sentry 等）。我们不收集用户行为数据或使用统计信息，也不进行任何追踪。</p>\n<h3>7. 广告</h3>\n<p>本应用不显示广告。本应用为买断制应用，未集成任何广告 SDK。</p>\n<h3>8. 儿童隐私</h3>\n<p>Voicloud Direct 不面向 13 岁以下的儿童。我们不会故意收集 13 岁以下儿童的个人信息。</p>\n<h3>9. 政策变更</h3>\n<p>本隐私政策可能会不定期更新。如有变更，将在更新生效日期后反映在本页面上。</p>\n", "contact": "<div class=\"contact-box\"><h3>联系我们</h3><p>如对本隐私政策有任何疑问，请通过以下方式与我们联系。</p><p><a href=\"mailto:monma.free@gmail.com\">monma.free@gmail.com</a></p></div>"}
+  };
 
-        <h2>プライバシーポリシー</h2>
-        <p class="effective-date">施行日: 2026年6月10日</p>
+  function getLang() {
+    var p = new URLSearchParams(location.search).get('lang');
+    if (p && i18n[p]) return p;
+    var bl = (navigator.language || 'ja');
+    if (bl.startsWith('zh')) return 'zh-Hans';
+    var s = bl.slice(0,2);
+    return i18n[s] ? s : 'ja';
+  }
 
-        <p>本ポリシーは、Mon Software が開発・提供する iOS アプリ「Voicloud Direct」(以下「本アプリ」) における情報の取り扱いについて説明するものです。私たちはお客様のプライバシーを保護し、すべての処理を透明かつ最小限のデータ収集で行うことをお約束します。</p>
+  function render(lang) {
+    var d = i18n[lang];
+    document.title = d.title;
+    document.documentElement.lang = lang;
+    history.replaceState({},'','?lang='+lang);
+    var bar = document.getElementById('lang-bar');
+    bar.innerHTML = LANGS.map(function(l) {
+      return '<button class="lang-btn' + (l===lang?' active':'') + '" onclick="render(\'' + l + '\')">' + LABELS[l] + '</button>';
+    }).join('');
+    var supportLang = '?lang=' + lang;
+    document.getElementById('content').innerHTML =
+      '<div class="page-header"><h1>' + d.heading + '</h1><p class="subtitle">' + d.effectiveDate + '</p></div>' +
+      d.intro +
+      d.sections +
+      d.contact +
+      '<div class="footer"><a href="voicloud-direct-support.html' + supportLang + '">Help &amp; Support</a></div>';
+  }
 
-        <div class="section">
-            <h3>1. 収集するデータ</h3>
-            <p>本アプリは以下のデータにアクセスします。これらはすべてお客様の iPhone 上にローカル保存され、お客様が明示的にアップロード・送信を選択しない限り、外部に送信されることはありません。</p>
-            <ul>
-                <li><strong>音声録音</strong> — マイクで録音された音声ファイルは、お客様の iPhone 内にローカル保存されます。</li>
-                <li><strong>文字起こし結果・要約</strong> — 本アプリが生成・取得したテキストは、端末内のローカルストア (SwiftData) に保存されます。</li>
-                <li><strong>位置情報 (任意)</strong> — 録音時の場所をメタデータとして残す機能を ON にした場合のみ取得します。録音ファイルに付随して端末内に保存され、開発者には送信されません。いつでも OFF にできます。</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>2. 必要な OS 権限</h3>
-            <ul>
-                <li><strong>マイク</strong> — 音声を録音するために必要です。</li>
-                <li><strong>位置情報 (任意)</strong> — 録音場所をメタデータとして残す場合のみ使用します。</li>
-                <li><strong>カレンダー (任意)</strong> — カレンダーの予定からファイル名を自動生成する機能を使う場合のみ使用します。予定の情報は端末内でのファイル名生成にのみ使われ、外部には送信されません。</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h3>3. クラウドアップロード (任意)</h3>
-            <p>お客様はご自身の iCloud Drive / Google Drive / Dropbox / OneDrive / Box アカウントに録音をアップロードできます。これらのアップロードはお客様ご自身のアカウントに直接保存され、開発者のサーバーを経由しません。OAuth 認証情報・トークンはお客様の端末の Keychain にのみ保存されます。</p>
-        </div>
-
-        <div class="section">
-            <h3>4. AI 機能 (文字起こし・要約 / BYOK)</h3>
-            <p>本アプリの文字起こし・要約は「BYOK (Bring Your Own Key)」方式です。これらは任意機能であり、利用するにはお客様ご自身が取得した AI プロバイダの API キーを設定する必要があります。対応プロバイダは <strong>OpenAI</strong>、<strong>Google Gemini (Google AI Studio)</strong>、<strong>Google Vertex AI</strong> です。</p>
-            <p><strong>音声・テキストの送信は、お客様が API キーを設定し、文字起こし・要約を実行したときのみ発生します。</strong>このとき、対象の録音音声またはそのテキストが、お客様の端末から、お客様が選択したプロバイダ (OpenAI または Google) の API へ直接送信されます。送信はお客様ご自身の API キーで認証され、Voicloud Direct がデータを中継することはありません。送信先プロバイダにおける課金・データの取り扱いは、各プロバイダの規約・プライバシーポリシーに従います。</p>
-            <p><strong>API キーを設定しない場合、音声・テキストはいかなる AI サービスにも送信されません。</strong>録音・再生・共有シートでの書き出しといった主要機能は、API キーなしで動作します。</p>
-            <p>API キーはお客様の端末の Keychain に暗号化して保存され、開発者がアクセスすることはできません。開発者のサーバーに送信されることもありません。</p>
-        </div>
-
-        <div class="section">
-            <h3>5. 開発者サーバーへの送信なし</h3>
-            <p>Voicloud Direct は、お客様の音声・文字起こし・要約・API キーを、開発者が所有または運営するサーバーに送信することはありません (そもそも当社は AI 推論サーバーを保有していません)。すべての処理はお客様の端末上、お客様が明示的に接続したクラウドサービス内、またはお客様が API キーを設定したうえで明示的に実行した AI サービス (opt-in) でのみ行われます。</p>
-        </div>
-
-        <div class="section">
-            <h3>6. アナリティクス・トラッキング</h3>
-            <p>本アプリはアナリティクス SDK (Google Analytics、Firebase、Sentry 等) を一切使用していません。ユーザーの行動データ・使用統計を収集することも、トラッキングを行うこともありません。</p>
-        </div>
-
-        <div class="section">
-            <h3>7. 広告</h3>
-            <p>本アプリは広告を表示しません。買い切り型のアプリで、広告 SDK を一切組み込んでいません。</p>
-        </div>
-
-        <div class="section">
-            <h3>8. お子様のプライバシー</h3>
-            <p>Voicloud Direct は 13 歳未満のお子様を対象としたアプリではありません。当社は 13 歳未満のお子様から故意に個人情報を収集することはありません。</p>
-        </div>
-
-        <div class="section">
-            <h3>9. ポリシーの変更</h3>
-            <p>本プライバシーポリシーは随時更新されることがあります。変更があった場合は、施行日を更新した上で本ページに反映されます。</p>
-        </div>
-
-        <div class="contact-info">
-            <h3>お問い合わせ</h3>
-            <p>本プライバシーポリシーに関するご質問は、以下までご連絡ください。<br>
-            <a href="mailto:monma.free@gmail.com">monma.free@gmail.com</a></p>
-        </div>
-    </div>
+  window.render = render;
+  render(getLang());
+})();
+</script>
 </body>
 </html>
